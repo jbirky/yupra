@@ -1,0 +1,9 @@
+title:            YUPRA
+tagline:          'Summer REU 2024'
+url:              https://jbirky.github.io
+baseurl:          '/yupra'
+
+author:
+  name:           'Jessica Birky'
+
+theme: just-the-docs
