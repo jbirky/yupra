@@ -4,7 +4,8 @@ title: 1. Intro to Stellar
 parent: Tutorials
 ---
 
-Note: If you have not installed the packages `vplanet` and `vplanet_inference` you first need to install these. 
+{: .note }
+If you have not installed the packages `vplanet` and `vplanet_inference` you first need to install these. 
 
 Import packages:
 
