@@ -73,3 +73,11 @@ git clone https://github.com/jbirky/alabi
 cd alabi  
 python setup.py install
 ```
+
+## 4. Add repository paths to your bash profile
+Next create an environmental variable for each of these packages. In terminal, copy these lines, replacing `path_to` with the base directory of your research folder:
+```bash
+echo "export PYTHONPATH=$PYTHONPATH:/path_to/research/alabi" >> ~/.bash_profile
+echo "export PYTHONPATH=$PYTHONPATH:/path_to/research/vplanet" >> ~/.bash_profile
+echo "export PYTHONPATH=$PYTHONPATH:/path_to/research/vplanet_inference" >> ~/.bash_profile
+```

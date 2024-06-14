@@ -13,6 +13,7 @@ We will be using github to manage uploading our results for the project and shar
 
 [![](../images/git_workflow.png)](https://dev.to/ambujsahu81/create-a-simple-github-actions-workflow-347n)
 
+[Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ## First time setup: how to install the project repository  
 
@@ -36,6 +37,7 @@ To do this, change directories to your `research/` folder:
 cd ~/research
 ```
 Within the `research` directory, download the repo by using the `clone` command (and replacing `jbirky` in the url with your own github username):
+
 ```bash
 git clone https://github.com/jbirky/yupra
 ```
@@ -62,20 +64,15 @@ This is the folder where you'll add all the code that you write (note: you only 
 Copy the tutorial files to your personal folder:
 ```bash
 cp -r tutorials/ jbirky/tutorials 
-``
-
-Now if you type 
-```bash
-git status
 ```
-you can check that git has tracked that new files have been added or modified, and the status command should show something like
+
+Now if you type `git status` you can check that git has tracked that new files have been added or modified, and the status command should show something like:
 ```bash
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	jbirky/
 
 ```
-
 
 
 ### For more detailed instructions see here: 
