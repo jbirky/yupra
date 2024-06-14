@@ -14,13 +14,21 @@ nav_order: 2
 
 - Fleming et al. 2019: [On The XUV Luminosity Evolution of TRAPPIST-1](https://arxiv.org/abs/1906.05250)
 
-## Stellar evolution
+- Johnstone et al. 2020: [The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs](https://arxiv.org/abs/2009.07695)
+
+## Stellar evolution videos
 
 [](https://www.youtube.com/watch?v=wKxArKOxhsY)
 
 [](https://www.youtube.com/watch?v=ye9vu_ozj44)
 
-## Statistics
+## Git tutorial videos
+
+[](https://www.youtube.com/watch?v=USjZcfj8yxE)
+
+[](https://www.youtube.com/watch?v=8JJ101D3knE)
+
+## Presentations
 
 Intro to `alabi` talk:
 [[slides]](../files/alabi_talk.pdf)
