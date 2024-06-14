@@ -5,6 +5,9 @@ parent: Tutorials
 math_jax: true
 ---
 
+{: .note }
+If you have not installed the packages `vplanet` and `vplanet_inference` you first need to install these. 
+
 Import packages:
 
 
