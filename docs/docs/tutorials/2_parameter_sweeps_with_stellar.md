@@ -5,6 +5,12 @@ parent: Tutorials
 math_jax: true
 ---
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 {: .note }
 If you have not installed the packages `vplanet` and `vplanet_inference` you first need to install these. 
 

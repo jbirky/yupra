@@ -64,15 +64,27 @@ This is the folder where you'll add all the code that you write (note: you only 
 Copy the tutorial files to your personal folder:
 ```bash
 cp -r tutorials/ jbirky/tutorials 
-```
+``
 
-Now if you type `git status` you can check that git has tracked that new files have been added or modified, and the status command should show something like:
+Now if you type 
+```bash
+git status
+```
+you can check that git has tracked that new files have been added or modified, and the status command should show something like
 ```bash
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	jbirky/
 
 ```
+
+To take changes we've made on our local machine and upload them back to our repo fork, we need to `add` the new files, `commit` the changes with a commit message, and `push` them to upload:
+```bash
+git add jbirky/
+git commit -m "copy tutorials"
+git push
+```
+now if you go back to the webpage of your fork https://github.com/username/yupra, you should see that your new files have been uploaded.
 
 
 ### For more detailed instructions see here: 

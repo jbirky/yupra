@@ -14,9 +14,6 @@ Required Installations:
 - [Windows subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
 - [anaconda](https://docs.anaconda.com/free/anaconda/install/linux/)
 
-Recommended Installations:
-- [vscode](https://code.visualstudio.com/) (code editor) 
-
 
 ## 1. Set up a new conda environment
 ```bash
