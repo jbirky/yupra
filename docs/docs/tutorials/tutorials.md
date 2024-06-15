@@ -17,16 +17,15 @@ permalink: docs/tutorials
 
 2. Parameter sweeps 
 - run parameter sweeps in python using `vplanet_inference`
+- exercise: given data from trappist 1, tweak the model parameters by hand to fit the data 
+- how do we do this robustly while estimating the uncertainty?
 
 3. Statistics I
-- first exercise: given data from trappist 1, tweak the model parameters by hand to fit the data - how do we do this robustly while estimating the uncertainty?
-- introduce bayesian statistics (theory)
-
-4. Statistics II
+- introduction to Bayesian statistics 
 - introduction to markov chain monte carlo (MCMC) methods
 - example: fitting a line to data using `emcee`
 
-5. Statistics III
+4. Statistics II
 - introduction to `alabi` 
 - reproduce some examples in the `alabi` docs
 - reproduce trappist 1 analysis with `alabi`
