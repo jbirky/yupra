@@ -8,11 +8,13 @@ nav_order: 2
 {: .no_toc }
 
 
-## Papers
+## Relevant Papers
 
 - Barnes et al. 2019: [VPLanet: The Virtual Planet Simulator](https://arxiv.org/abs/1905.06367)
 
 - Fleming et al. 2019: [On The XUV Luminosity Evolution of TRAPPIST-1](https://arxiv.org/abs/1906.05250)
+
+- Birky et al. 2021: [Improved Constraints for the XUV Luminosity Evolution of Trappist-1](https://iopscience.iop.org/article/10.3847/2515-5172/ac034c/meta)
 
 - Johnstone et al. 2020: [The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs](https://arxiv.org/abs/2009.07695)
 
@@ -30,6 +32,8 @@ nav_order: 2
 - Stellar Evolution (Jess's talk 6/17)
 
 - Intro to `alabi` talk: [[slides]](../files/alabi_talk.pdf)
+
+- XUV evolution of Trappist-1 (Cool Stars 21 conference poster): [[poster]](../files/coolstars21.pdf)
 
 
 ## Tools/Links

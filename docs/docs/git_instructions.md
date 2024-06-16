@@ -7,6 +7,12 @@ nav_order: 2
 # Git Instructions
 {: .no_toc }
 
+Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 ## General workflow
 
 We will be using github to manage uploading our results for the project and sharing work
@@ -17,7 +23,7 @@ We will be using github to manage uploading our results for the project and shar
 
 ## First time setup: how to install the project repository  
 
-### 1. Fork the repo
+### Fork the repo
 
 Navigate to [https://github.com/jbirky/yupra](https://github.com/jbirky/yupra) on your browser. In the upper right corner, select the `Fork` button:
 
@@ -29,7 +35,7 @@ Choose yourself as the owner for the forked repo and check "copy main branch onl
 
 (Note: Step 1 only needs to be done once.)
 
-### 2. Clone repo to local computer
+### Clone repo to local computer
 
 Now we want to `clone` our fork of the repository onto our local machine. We can put this in the same `research/` directory as our other files. 
 To do this, change directories to your `research/` folder:
@@ -59,12 +65,12 @@ mkdir jbirky
 ```
 This is the folder where you'll add all the code that you write (note: you only need to create this folder once).
 
-### 3. Commit and push changes results to your fork
+## Commit and push changes results to your fork
 
 Copy the tutorial files to your personal folder:
 ```bash
 cp -r tutorials/ jbirky/tutorials 
-``
+```
 
 Now if you type 
 ```bash
@@ -86,8 +92,29 @@ git push
 ```
 now if you go back to the webpage of your fork https://github.com/username/yupra, you should see that your new files have been uploaded.
 
+## Pull requests: update the main repository with your code
 
-### For more detailed instructions see here: 
+Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select `Contribute`:
+
+![](../images/fork4.png)
+
+This will now create a pull request, allowing your fork `username/yupra` to be merged with the main repo `jbirky/yupra`.
+
+
+## Syncing: update your fork with changes from the main repo
+
+Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select `Sync fork`:
+
+![](../images/fork4.png)
+
+This will sync changes made by others from the main repo `jbirky/yupra` to your own fork fork `username/yupra`. Then to update the code on your local computer, go to your `research/yupra` directory and pull the latest version of your fork:
+
+```bash
+git pull
+```
+
+
+## For more instructions see here
 
 - [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
