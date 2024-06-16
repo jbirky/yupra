@@ -358,7 +358,7 @@
   },"51": {
     "doc": "Git Instructions",
     "title": "Git Instructions",
-    "content": " ",
+    "content": ". | General workflow | First time setup: how to install the project repository . | Fork the repo | Clone repo to local computer | . | Commit and push changes results to your fork | Pull requests: update the main repository with your code | Syncing: update your fork with changes from the main repo | For more instructions see here | . ",
     "url": "/docs/git_instructions.html",
     
     "relUrl": "/docs/git_instructions.html"
@@ -372,81 +372,109 @@
   },"53": {
     "doc": "Git Instructions",
     "title": "First time setup: how to install the project repository",
-    "content": "1. Fork the repo . Navigate to https://github.com/jbirky/yupra on your browser. In the upper right corner, select the Fork button: . Choose yourself as the owner for the forked repo and check “copy main branch only”: . (Note: Step 1 only needs to be done once.) . 2. Clone repo to local computer . Now we want to clone our fork of the repository onto our local machine. We can put this in the same research/ directory as our other files. To do this, change directories to your research/ folder: . cd ~/research . Within the research directory, download the repo by using the clone command (and replacing jbirky in the url with your own github username): . git clone https://github.com/jbirky/yupra . If you type ls, you should now see all of the packages we’ve downloaded plus the yupra repo: . /research /alabi /vplanet /vplanet_inference /yupra ... Now we’ll create a new folder within the yupra project to store our code and results. To do this, navigate to yupra directory and create a new folder with your name: . cd yupra mkdir jbirky . This is the folder where you’ll add all the code that you write (note: you only need to create this folder once). 3. Commit and push changes results to your fork . Copy the tutorial files to your personal folder: . cp -r tutorials/ jbirky/tutorials `` Now if you type ```bash git status . you can check that git has tracked that new files have been added or modified, and the status command should show something like . Untracked files: (use \"git add &lt;file&gt;...\" to include in what will be committed) jbirky/ . To take changes we’ve made on our local machine and upload them back to our repo fork, we need to add the new files, commit the changes with a commit message, and push them to upload: . git add jbirky/ git commit -m \"copy tutorials\" git push . now if you go back to the webpage of your fork https://github.com/username/yupra, you should see that your new files have been uploaded. For more detailed instructions see here: . | Git cheat sheet . | How to fork a repo . | How to update your fork . | . ",
+    "content": "Fork the repo . Navigate to https://github.com/jbirky/yupra on your browser. In the upper right corner, select the Fork button: . Choose yourself as the owner for the forked repo and check “copy main branch only”: . (Note: Step 1 only needs to be done once.) . Clone repo to local computer . Now we want to clone our fork of the repository onto our local machine. We can put this in the same research/ directory as our other files. To do this, change directories to your research/ folder: . cd ~/research . Within the research directory, download the repo by using the clone command (and replacing jbirky in the url with your own github username): . git clone https://github.com/jbirky/yupra . If you type ls, you should now see all of the packages we’ve downloaded plus the yupra repo: . /research /alabi /vplanet /vplanet_inference /yupra ... Now we’ll create a new folder within the yupra project to store our code and results. To do this, navigate to yupra directory and create a new folder with your name: . cd yupra mkdir jbirky . This is the folder where you’ll add all the code that you write (note: you only need to create this folder once). ",
     "url": "/docs/git_instructions.html#first-time-setup-how-to-install-the-project-repository",
     
     "relUrl": "/docs/git_instructions.html#first-time-setup-how-to-install-the-project-repository"
   },"54": {
+    "doc": "Git Instructions",
+    "title": "Commit and push changes results to your fork",
+    "content": "Copy the tutorial files to your personal folder: . cp -r tutorials/ jbirky/tutorials . Now if you type . git status . you can check that git has tracked that new files have been added or modified, and the status command should show something like . Untracked files: (use \"git add &lt;file&gt;...\" to include in what will be committed) jbirky/ . To take changes we’ve made on our local machine and upload them back to our repo fork, we need to add the new files, commit the changes with a commit message, and push them to upload: . git add jbirky/ git commit -m \"copy tutorials\" git push . now if you go back to the webpage of your fork https://github.com/username/yupra, you should see that your new files have been uploaded. ",
+    "url": "/docs/git_instructions.html#commit-and-push-changes-results-to-your-fork",
+    
+    "relUrl": "/docs/git_instructions.html#commit-and-push-changes-results-to-your-fork"
+  },"55": {
+    "doc": "Git Instructions",
+    "title": "Pull requests: update the main repository with your code",
+    "content": "Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select Contribute: . This will now create a pull request, allowing your fork username/yupra to be merged with the main repo jbirky/yupra. ",
+    "url": "/docs/git_instructions.html#pull-requests-update-the-main-repository-with-your-code",
+    
+    "relUrl": "/docs/git_instructions.html#pull-requests-update-the-main-repository-with-your-code"
+  },"56": {
+    "doc": "Git Instructions",
+    "title": "Syncing: update your fork with changes from the main repo",
+    "content": "Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select Sync fork: . This will sync changes made by others from the main repo jbirky/yupra to your own fork fork username/yupra. Then to update the code on your local computer, go to your research/yupra directory and pull the latest version of your fork: . git pull . ",
+    "url": "/docs/git_instructions.html#syncing-update-your-fork-with-changes-from-the-main-repo",
+    
+    "relUrl": "/docs/git_instructions.html#syncing-update-your-fork-with-changes-from-the-main-repo"
+  },"57": {
+    "doc": "Git Instructions",
+    "title": "For more instructions see here",
+    "content": ". | Git cheat sheet . | How to fork a repo . | How to update your fork . | . ",
+    "url": "/docs/git_instructions.html#for-more-instructions-see-here",
+    
+    "relUrl": "/docs/git_instructions.html#for-more-instructions-see-here"
+  },"58": {
     "doc": "Home",
     "title": "Welcome!",
     "content": "View it on GitHub . ",
     "url": "/#welcome",
     
     "relUrl": "/#welcome"
-  },"55": {
+  },"59": {
     "doc": "Home",
     "title": "Meeting Schedule",
     "content": "|   | Mon | Tue | Wed | Thu | Fri | . | Week 1 (6/17) | In person intro at YVC |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 2 (6/24) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 3 (7/01) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 4 (7/08) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 5 (7/15) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 6 (7/22) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 7 (7/29) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 8 (8/05) | 10 - 12: check-in and goals |   | 10 - 12: midweek check-in |   | TBD: Rory’s group meeting | . | Week 9 (8/12) | 10 - 12: practice presentations |   | 9 - 12: research symposium at UW |   |   | . UW undergrad symposium: Wednesday August 14, 2024 from 9:00 am – 12:00 pm . ",
     "url": "/#meeting-schedule",
     
     "relUrl": "/#meeting-schedule"
-  },"56": {
+  },"60": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"57": {
+  },"61": {
     "doc": "Resources",
     "title": "Resources",
     "content": " ",
     "url": "/docs/resources.html",
     
     "relUrl": "/docs/resources.html"
-  },"58": {
+  },"62": {
     "doc": "Resources",
-    "title": "Papers",
-    "content": ". | Barnes et al. 2019: VPLanet: The Virtual Planet Simulator . | Fleming et al. 2019: On The XUV Luminosity Evolution of TRAPPIST-1 . | Johnstone et al. 2020: The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs . | Barnes et al. (In prep): History and Habitability of the LP 890-9 Planetary System . | Gibor Basri (book): An Introduction to Stellar Magnetic Activity . | . ",
-    "url": "/docs/resources.html#papers",
+    "title": "Relevant Papers",
+    "content": ". | Barnes et al. 2019: VPLanet: The Virtual Planet Simulator . | Fleming et al. 2019: On The XUV Luminosity Evolution of TRAPPIST-1 . | Birky et al. 2021: Improved Constraints for the XUV Luminosity Evolution of Trappist-1 . | Johnstone et al. 2020: The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs . | Barnes et al. (In prep): History and Habitability of the LP 890-9 Planetary System . | Gibor Basri (book): An Introduction to Stellar Magnetic Activity . | . ",
+    "url": "/docs/resources.html#relevant-papers",
     
-    "relUrl": "/docs/resources.html#papers"
-  },"59": {
+    "relUrl": "/docs/resources.html#relevant-papers"
+  },"63": {
     "doc": "Resources",
     "title": "Presentations",
-    "content": ". | Introduction to the REU (Rory’s talk 6/17): [slides] . | Planetary Evolution and Habitability (Rory’s talk 6/17): [slides] . | Stellar Evolution (Jess’s talk 6/17) . | Intro to alabi talk: [slides] . | . ",
+    "content": ". | Introduction to the REU (Rory’s talk 6/17): [slides] . | Planetary Evolution and Habitability (Rory’s talk 6/17): [slides] . | Stellar Evolution (Jess’s talk 6/17) . | Intro to alabi talk: [slides] . | XUV evolution of Trappist-1 (Cool Stars 21 conference poster): [poster] . | . ",
     "url": "/docs/resources.html#presentations",
     
     "relUrl": "/docs/resources.html#presentations"
-  },"60": {
+  },"64": {
     "doc": "Resources",
     "title": "Tools/Links",
     "content": "These are various tools I use on a daily basis for my research: . | zotero - literature/citation manager application . | zotero browswer connector - web browser extension (for firefox, chrome, safari, edge) that automatically downloads papers on your current browser page to your zotero application . | simbad - database of astronomical objects where you can search for data on particular objects . | arxiv - browse recently published papers in astronomy . | ads search - search for papers by author, year, journal, etc. | astrobites - summaries of papers written at an undergrad level . | vscode - code editor . | Github copilot - AI chat/pair programmer for vs code . | . ",
     "url": "/docs/resources.html#toolslinks",
     
     "relUrl": "/docs/resources.html#toolslinks"
-  },"61": {
+  },"65": {
     "doc": "Resources",
     "title": "Links to code docs",
     "content": ". | vplanet . | vplanet_inference . | alabi . | dynesty . | emcee . | astropy . | . ",
     "url": "/docs/resources.html#links-to-code-docs",
     
     "relUrl": "/docs/resources.html#links-to-code-docs"
-  },"62": {
+  },"66": {
     "doc": "Tasks",
     "title": "To do items",
     "content": ". 06/17 . | Set up Git instructions . | Complete Tutorial 1 . | Fill out Week 1 survey . | . Some further videos you can check out . Stellar Evolution: . | https://www.youtube.com/watch?v=wKxArKOxhsY . | https://www.youtube.com/watch?v=ye9vu_ozj44 . | . Git tutorials: . | https://www.youtube.com/watch?v=USjZcfj8yxE . | https://www.youtube.com/watch?v=8JJ101D3knE . | . ",
     "url": "/docs/tasks.html#to-do-items",
     
     "relUrl": "/docs/tasks.html#to-do-items"
-  },"63": {
+  },"67": {
     "doc": "Tasks",
     "title": "Tasks",
     "content": " ",
     "url": "/docs/tasks.html",
     
     "relUrl": "/docs/tasks.html"
-  },"64": {
+  },"68": {
     "doc": "Tutorials",
     "title": "Tutorials",
     "content": ". | Introduction to vplanet . | how to configure and run simulations by command line | run makeplot and reproduce examples in the vplanet docs | run stellar evolution model in python | . | Parameter sweeps . | run parameter sweeps in python using vplanet_inference | exercise: given data from trappist 1, tweak the model parameters by hand to fit the data | how do we do this robustly while estimating the uncertainty? | . | Statistics I . | introduction to Bayesian statistics | introduction to markov chain monte carlo (MCMC) methods | example: fitting a line to data using emcee | . | Statistics II . | introduction to alabi | reproduce some examples in the alabi docs | reproduce trappist 1 analysis with alabi | . | . ",
