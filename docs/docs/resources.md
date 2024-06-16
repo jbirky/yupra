@@ -52,17 +52,16 @@ These are various tools I use on a daily basis for my research:
 
 - [Github copilot](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279) - AI chat/pair programmer for vs code
 
+## Links to code docs
 
-## Videos
+- [`vplanet`](https://virtualplanetarylaboratory.github.io/vplanet/)
 
-Stellar Evolution:
+- [`vplanet_inference`](https://github.com/jbirky/vplanet_inference)
 
-- [https://www.youtube.com/watch?v=wKxArKOxhsY](https://www.youtube.com/watch?v=wKxArKOxhsY)
+- [`alabi`](https://jbirky.github.io/alabi/build/index.html)
 
-- [https://www.youtube.com/watch?v=ye9vu_ozj44](https://www.youtube.com/watch?v=ye9vu_ozj44)
+- [`dynesty`](https://dynesty.readthedocs.io/en/stable/)
 
-Git tutorials:
+- [`emcee`](https://emcee.readthedocs.io/en/stable/)
 
-- [https://www.youtube.com/watch?v=USjZcfj8yxE](https://www.youtube.com/watch?v=USjZcfj8yxE)
-
-- [https://www.youtube.com/watch?v=8JJ101D3knE](https://www.youtube.com/watch?v=8JJ101D3knE)
+- [`astropy`](https://docs.astropy.org/en/stable/)

@@ -88,6 +88,9 @@ now if you go back to the webpage of your fork https://github.com/username/yupra
 
 
 ### For more detailed instructions see here: 
+
+- [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
 - [How to fork a repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
 - [How to update your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
