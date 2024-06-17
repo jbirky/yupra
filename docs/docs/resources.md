@@ -12,6 +12,8 @@ nav_order: 2
 
 - Barnes et al. 2019: [VPLanet: The Virtual Planet Simulator](https://arxiv.org/abs/1905.06367)
 
+- Baraffe et al. 2015: [New evolutionary models for pre-main sequence and main sequence low-mass stars down to the hydrogen-burning limit](https://www.aanda.org/articles/aa/full_html/2015/05/aa25481-14/aa25481-14.html)
+
 - Fleming et al. 2019: [On The XUV Luminosity Evolution of TRAPPIST-1](https://arxiv.org/abs/1906.05250)
 
 - Birky et al. 2021: [Improved Constraints for the XUV Luminosity Evolution of Trappist-1](https://iopscience.iop.org/article/10.3847/2515-5172/ac034c/meta)
@@ -29,7 +31,7 @@ nav_order: 2
 
 - Planetary Evolution and Habitability (Rory's talk 6/17): [[slides]](../files/YUPRA_REU_2.pdf)
 
-- Stellar Evolution (Jess's talk 6/17)
+- Stellar Evolution (Jess's talk 6/17): [[slides]](https://docs.google.com/presentation/d/1RE33iOhzoHcbD9w70HvNFC8fZuEbMH5mr9he0n30iOA/edit?usp=sharing)
 
 - Intro to `alabi` talk: [[slides]](../files/alabi_talk.pdf)
 
