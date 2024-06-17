@@ -435,14 +435,14 @@
   },"62": {
     "doc": "Resources",
     "title": "Relevant Papers",
-    "content": ". | Barnes et al. 2019: VPLanet: The Virtual Planet Simulator . | Fleming et al. 2019: On The XUV Luminosity Evolution of TRAPPIST-1 . | Birky et al. 2021: Improved Constraints for the XUV Luminosity Evolution of Trappist-1 . | Johnstone et al. 2020: The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs . | Barnes et al. (In prep): History and Habitability of the LP 890-9 Planetary System . | Gibor Basri (book): An Introduction to Stellar Magnetic Activity . | . ",
+    "content": ". | Barnes et al. 2019: VPLanet: The Virtual Planet Simulator . | Baraffe et al. 2015: New evolutionary models for pre-main sequence and main sequence low-mass stars down to the hydrogen-burning limit . | Fleming et al. 2019: On The XUV Luminosity Evolution of TRAPPIST-1 . | Birky et al. 2021: Improved Constraints for the XUV Luminosity Evolution of Trappist-1 . | Johnstone et al. 2020: The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs . | Barnes et al. (In prep): History and Habitability of the LP 890-9 Planetary System . | Gibor Basri (book): An Introduction to Stellar Magnetic Activity . | . ",
     "url": "/docs/resources.html#relevant-papers",
     
     "relUrl": "/docs/resources.html#relevant-papers"
   },"63": {
     "doc": "Resources",
     "title": "Presentations",
-    "content": ". | Introduction to the REU (Rory’s talk 6/17): [slides] . | Planetary Evolution and Habitability (Rory’s talk 6/17): [slides] . | Stellar Evolution (Jess’s talk 6/17) . | Intro to alabi talk: [slides] . | XUV evolution of Trappist-1 (Cool Stars 21 conference poster): [poster] . | . ",
+    "content": ". | Introduction to the REU (Rory’s talk 6/17): [slides] . | Planetary Evolution and Habitability (Rory’s talk 6/17): [slides] . | Stellar Evolution (Jess’s talk 6/17): [slides] . | Intro to alabi talk: [slides] . | XUV evolution of Trappist-1 (Cool Stars 21 conference poster): [poster] . | . ",
     "url": "/docs/resources.html#presentations",
     
     "relUrl": "/docs/resources.html#presentations"
