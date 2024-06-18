@@ -12,12 +12,15 @@ conda activate yupra
 </code></pre></div></div> <p>Install <code class="language-plaintext highlighter-rouge">vplanet</code>: this is the main package for running stellar/exoplanet models in C:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/VirtualPlanetaryLaboratory/vplanet
 <span class="nb">cd </span>vplanet
 python setup.py develop
+<span class="nb">cd</span> ..
 </code></pre></div></div> <p>Install <code class="language-plaintext highlighter-rouge">vplanet_inference</code>: this is the code we’ll be using to run <code class="language-plaintext highlighter-rouge">vplanet</code> models using Python.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/jbirky/vplanet_inference
 <span class="nb">cd </span>vplanet_inference
-python setup.py <span class="nb">install</span>
+python setup.py <span class="nb">install
+cd</span> ..
 </code></pre></div></div> <p>Install <code class="language-plaintext highlighter-rouge">alabi</code>: this is the code we’ll be using for running statistics with our models.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/jbirky/alabi  
 <span class="nb">cd </span>alabi  
-python setup.py <span class="nb">install</span>
+python setup.py <span class="nb">install
+cd</span> ..
 </code></pre></div></div> <h2 id="4-add-repository-paths-to-your-bash-profile"> <a href="#4-add-repository-paths-to-your-bash-profile" class="anchor-heading" aria-labelledby="4-add-repository-paths-to-your-bash-profile"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. Add repository paths to your bash profile </h2> <p>Next create an environmental variable for each of these packages. In terminal, copy these lines, replacing <code class="language-plaintext highlighter-rouge">path_to</code> with the base directory of your research folder:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"export PYTHONPATH=</span><span class="nv">$PYTHONPATH</span><span class="s2">:/path_to/research/alabi"</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
 <span class="nb">echo</span> <span class="s2">"export PYTHONPATH=</span><span class="nv">$PYTHONPATH</span><span class="s2">:/path_to/research/vplanet"</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
 <span class="nb">echo</span> <span class="s2">"export PYTHONPATH=</span><span class="nv">$PYTHONPATH</span><span class="s2">:/path_to/research/vplanet_inference"</span> <span class="o">&gt;&gt;</span> ~/.bash_profile

@@ -5,11 +5,11 @@ nav_order: 1
 permalink: /
 ---
 
-# Welcome!
+# YUPRA
 
-[View it on GitHub][Yupra repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
+Welcome to the YVC-UW Partnership for Research in Astrophysics (YUPRA) summer REU program!
 
-[YUPRA repo]: https://github.com/jbirky/yupra
+Github repository for the project: [https://github.com/jbirky/yupra](https://github.com/jbirky/yupra)
 
 ## Meeting Schedule
 
