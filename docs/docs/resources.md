@@ -60,7 +60,7 @@ These are various tools I use on a daily basis for my research:
 
 ## Scientific computing workshop
 
-- Notebooks from the scientific computing workshop: [https://github.com/jbirky/yupra/workshop/](https://github.com/jbirky/yupra/workshop/)
+- Notebooks from Rudy's scientific computing workshop: [https://github.com/jbirky/yupra/tree/main/workshop](https://github.com/jbirky/yupra/tree/main/workshop)
 
 ## Links to code docs
 
