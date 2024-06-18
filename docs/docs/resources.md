@@ -62,6 +62,8 @@ These are various tools I use on a daily basis for my research:
 
 - Notebooks from Rudy's scientific computing workshop: [https://github.com/jbirky/yupra/tree/main/workshop](https://github.com/jbirky/yupra/tree/main/workshop)
 
+- Additional software carpentry tutorials: [https://software-carpentry.org/lessons/](https://software-carpentry.org/lessons/)
+
 ## Links to code docs
 
 - [`vplanet`](https://virtualplanetarylaboratory.github.io/vplanet/)
