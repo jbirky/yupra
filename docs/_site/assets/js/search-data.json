@@ -344,7 +344,7 @@
   },"49": {
     "doc": "Configuration",
     "title": "3. Install some custom packages for this project",
-    "content": "Create a new file directory to install pakages from github. As an example, my file structure looks like this: . /research /alabi /vplanet /vplanet_inference ... To create these directories, navigate to your home directory (or somewhere where you have enough disk space): . cd ~/ . Next, create a directory to store all research related stuff, and enter that directory: . mkdir research cd research . Install vplanet: this is the main package for running stellar/exoplanet models in C: . git clone https://github.com/VirtualPlanetaryLaboratory/vplanet cd vplanet python setup.py develop . Install vplanet_inference: this is the code we’ll be using to run vplanet models using Python. git clone https://github.com/jbirky/vplanet_inference cd vplanet_inference python setup.py install . Install alabi: this is the code we’ll be using for running statistics with our models. git clone https://github.com/jbirky/alabi cd alabi python setup.py install . ",
+    "content": "Create a new file directory to install pakages from github. As an example, my file structure looks like this: . /research /alabi /vplanet /vplanet_inference ... To create these directories, navigate to your home directory (or somewhere where you have enough disk space): . cd ~/ . Next, create a directory to store all research related stuff, and enter that directory: . mkdir research cd research . Install vplanet: this is the main package for running stellar/exoplanet models in C: . git clone https://github.com/VirtualPlanetaryLaboratory/vplanet cd vplanet python setup.py develop cd .. Install vplanet_inference: this is the code we’ll be using to run vplanet models using Python. git clone https://github.com/jbirky/vplanet_inference cd vplanet_inference python setup.py install cd .. Install alabi: this is the code we’ll be using for running statistics with our models. git clone https://github.com/jbirky/alabi cd alabi python setup.py install cd .. ",
     "url": "/docs/configuration.html#3-install-some-custom-packages-for-this-project",
     
     "relUrl": "/docs/configuration.html#3-install-some-custom-packages-for-this-project"
@@ -406,11 +406,11 @@
     "relUrl": "/docs/git_instructions.html#for-more-instructions-see-here"
   },"58": {
     "doc": "Home",
-    "title": "Welcome!",
-    "content": "View it on GitHub . ",
-    "url": "/#welcome",
+    "title": "YUPRA",
+    "content": "Welcome to the YVC-UW Partnership for Research in Astrophysics (YUPRA) summer REU program! . Github repository for the project: https://github.com/jbirky/yupra . ",
+    "url": "/#yupra",
     
-    "relUrl": "/#welcome"
+    "relUrl": "/#yupra"
   },"59": {
     "doc": "Home",
     "title": "Meeting Schedule",

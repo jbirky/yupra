@@ -58,6 +58,10 @@ These are various tools I use on a daily basis for my research:
 
 - [Github copilot](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279) - AI chat/pair programmer for vs code
 
+## Scientific computing workshop
+
+- Notebooks from the scientific computing workshop: [https://github.com/jbirky/yupra/workshop/](https://github.com/jbirky/yupra/workshop/)
+
 ## Links to code docs
 
 - [`vplanet`](https://virtualplanetarylaboratory.github.io/vplanet/)
