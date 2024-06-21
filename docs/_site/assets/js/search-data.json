@@ -356,125 +356,139 @@
     
     "relUrl": "/docs/configuration.html#4-add-repository-paths-to-your-bash-profile"
   },"51": {
+    "doc": "Datasets",
+    "title": "Datasets",
+    "content": "Host star stellar parameters from Exostars catalog . Download table: cat_xray_sources.csv . | star_name | Xray_Luminosity_preferred | Xray_Luminosity_pref_err | Source_of_pref_Xray_values | star_mass_EU | star_eMass_min_EU | star_eMass_max_EU | star_Radius_EU | star_eRadius_min_EU | star_eRadius_max_EU | star_Age_EU | star_eAge_min_EU | star_eAge_max_EU | star_SpType_EU | star_Teff_EU | star_eTeff_min_EU | star_eTeff_max_EU | . | HD 97658 | 1.04e+27 | 6.43e+25 | XMM | 0.85 | 0.02 | 0.02 | 0.73 | 0.02 | 0.02 | nan | nan | nan | K1V | 5170 | 44 | 44 | . | GJ 1132 | 9.96e+25 | 2.95e+25 | XMM | 0.181 | 0.019 | 0.019 | 0.207 | 0.016 | 0.016 | 5 | nan | 10 | M3.5 | 3270 | 140 | 140 | . | 55 Cnc | 6.05e+26 | 5.23e+25 | XMM | 1.015 | 0.051 | 0.051 | 0.98 | 0.016 | 0.016 | 10.2 | 2.5 | 2.5 | K0IV-V | 5196 | 24 | 24 | . | GJ 3470 | 4.43e+27 | 7.88e+26 | XMM | 0.51 | 0.06 | 0.06 | 0.48 | 0.04 | 0.04 | 1.6 | 1.3 | 1.3 | M1.5 | 3652 | 50 | 50 | . | Kepler-138 | 2.73e+27 | 8.97e+26 | XMM | 0.57 | 0.05 | 0.05 | 0.53 | 0.04 | 0.04 | nan | nan | nan | M1 V | 4079 | 238 | 238 | . | Kepler-18 | 1.46e+31 | 5.57e+30 | Einstein | 0.972 | 0.042 | 0.042 | 1.108 | 0.051 | 0.051 | 10 | 2.3 | 2.3 | nan | 5383 | 44 | 44 | . | HD 219134 | 9.7e+26 | 1.57e+26 | XMM | 0.794 | nan | nan | 0.778 | 0.005 | 0.005 | nan | nan | nan | K3V | 4699 | 16 | 16 | . | Trappist-1 | 1.89e+26 | 4.85e+25 | XMM | 0.08 | 0.007 | 0.007 | 0.117 | 0.004 | 0.004 | 7.6 | 2.2 | 2.2 | M8 | 2560 | 55 | 55 | . Host star stellar parameters from NASA exoplanet archive . Download table: cat_xray_sources_with_rot.csv . | sy_name | hostname | st_age | st_ageerr1 | st_ageerr2 | st_agelim | st_vsin | st_vsinerr1 | st_vsinerr2 | st_vsinlim | st_rotp | st_rotperr1 | st_rotperr2 | st_rotplim | st_refname | . | 55 Cnc | 55 Cnc | 5.5 | 2.5 | -2.5 | 0 | nan | nan | nan | nan | 38.5 | 3.5 | -3.5 | 0 | MARCY_ET_AL__2002 | . | 55 Cnc | 55 Cnc | 9.5 | nan | nan | 0 | nan | nan | nan | nan | nan | nan | nan | nan | TURNBULL_2015 | . | 55 Cnc | 55 Cnc | nan | nan | nan | nan | 1.23 | 0.01 | -0.01 | 1 | 38.8 | 0.05 | -0.05 | 0 | BOURRIER_ET_AL__2018 | . | 55 Cnc | 55 Cnc | nan | nan | nan | nan | 2.5 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | VALENTI___FISCHER_2005 | . | 55 Cnc | 55 Cnc | 7.24 | nan | nan | -1 | nan | nan | nan | nan | nan | nan | nan | nan | TAKEDA_ET_AL__2007 | . | 55 Cnc | 55 Cnc | 5 | nan | nan | 0 | 2 | nan | nan | 0 | 44 | nan | nan | 0 | BUTLER_ET_AL__1997 | . | 55 Cnc | 55 Cnc | nan | nan | nan | nan | nan | nan | 3.3 | 0.9 | -0.9 | 0 | nan | nan | BOURRIER__AMP__H_EACUTE_BRARD_2014 | . | 55 Cnc | 55 Cnc | 10.2 | 2.5 | -2.5 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | VON_BRAUN_ET_AL__2011 | . | GJ 1132 | GJ 1132 | 5 | nan | nan | -1 | 2 | nan | nan | 1 | nan | nan | nan | nan | BERTA_THOMPSON_ET_AL__2015 | . | GJ 1132 | GJ 1132 | nan | nan | nan | nan | nan | nan | nan | nan | 122.31 | 6.03 | -5.04 | 0 | CLOUTIER_ET_AL__2017 | . | GJ 1132 | GJ 1132 | nan | nan | nan | nan | nan | nan | nan | nan | 122.3 | 6 | -5 | 0 | BONFILS_ET_AL__2018 | . | GJ 3470 | GJ 3470 | 1.65 | 1.35 | -1.35 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | BONFILS_ET_AL__2012 | . | GJ 3470 | GJ 3470 | 2.5 | 1.5 | -1.5 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | BIDDLE_ET_AL__2014 | . | GJ 3470 | GJ 3470 | 1.65 | 1.35 | -1.35 | 0 | nan | nan | nan | nan | 21.54 | 0.49 | -0.49 | 0 | KOSIAREK_ET_AL__2019 | . | HD 219134 | HD 219134 | 12.46 | nan | nan | 0 | nan | nan | nan | nan | nan | nan | nan | nan | VOGT_ET_AL__2015 | . | HD 219134 | HD 219134 | nan | nan | nan | nan | 2 | nan | nan | 0 | nan | nan | nan | nan | NORDSTROM_ET_AL__2004 | . | HD 219134 | HD 219134 | 11 | 2.2 | -2.2 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | GILLON_ET_AL__2017 | . | HD 219134 | HD 219134 | nan | nan | nan | nan | 0.4 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | MOTALEBI_ET_AL__2015 | . | HD 219134 | HD 219134 | nan | nan | nan | nan | 1.8 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | VALENTI___FISCHER_2005 | . | HD 219134 | HD 219134 | 11 | 2.2 | -2.2 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | SEAGER_ET_AL__2021 | . | HD 219134 | HD 219134 | 12.46 | nan | nan | 0 | nan | nan | nan | nan | nan | nan | nan | nan | TURNBULL_2015 | . | HD 219134 | HD 219134 | 12.46 | nan | -11.96 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | TAKEDA_ET_AL__2007 | . | HD 97658 | HD 97658 | 6 | 1 | -1 | 0 | 0.5 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | VAN_GROOTEL_ET_AL__2014 | . | HD 97658 | HD 97658 | 0.64 | 5.48 | nan | 0 | nan | nan | nan | nan | nan | nan | nan | nan | TAKEDA_ET_AL__2007 | . | HD 97658 | HD 97658 | 3.9 | 2.6 | -2.03 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | ELLIS_ET_AL__2021 | . | HD 97658 | HD 97658 | nan | nan | nan | nan | 1.5 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | VALENTI___FISCHER_2005 | . | HD 97658 | HD 97658 | nan | nan | nan | nan | 0.5 | 0.5 | -0.5 | 0 | nan | nan | nan | nan | HOWARD_ET_AL__2011 | . | HD 97658 | HD 97658 | 0.64 | nan | nan | 0 | nan | nan | nan | nan | nan | nan | nan | nan | TURNBULL_2015 | . | Kepler-138 | Kepler-138 | 4.68 | 5.53 | -2.81 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | MORTON_ET_AL__2016 | . | Kepler-18 | Kepler-18 | 8.5 | 3.6 | -3.6 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | Q1_Q8_KOI_TABLE | . | Kepler-18 | Kepler-18 | 8.5 | 3.6 | -3.6 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | Q1_Q8_KOI_TABLE | . | Kepler-18 | Kepler-18 | 8.5 | 3.6 | -3.6 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | Q1_Q8_KOI_TABLE | . | Kepler-18 | Kepler-18 | 10 | 2.3 | -2.3 | 0 | 4 | nan | nan | 1 | nan | nan | nan | nan | COCHRAN_ET_AL__2011 | . | Kepler-18 | Kepler-18 | 10.72 | 2 | -2.83 | 0 | nan | nan | nan | nan | nan | nan | nan | nan | MORTON_ET_AL__2016 | . | TRAPPIST-1 | TRAPPIST-1 | 0.5 | nan | nan | -1 | nan | nan | nan | nan | 1.4 | 0.05 | -0.05 | 0 | GILLON_ET_AL__2016 | . | TRAPPIST-1 | TRAPPIST-1 | nan | nan | nan | nan | 2.04 | 0.18 | -0.16 | 0 | nan | nan | nan | nan | HIRANO_ET_AL__2020 | . Planet parameters from Exostars catalog . Download table: cat_xray_sources_planet_orbital_params.csv . | star_name | NamePlanet | MassPlanet_EU | mass_error_min_EU | mass_error_max_EU | RadiusPlanet_EU | radius_error_min_EU | radius_error_max_EU | orbital_period_EU | orbital_period_error_min_EU | orbital_period_error_max_EU | semi_major_axis_EU | semi_major_axis_error_min_EU | semi_major_axis_error_max_EU | eccentricity_EU | eccentricity_error_min_EU | eccentricity_error_max_EU | inclination_EU | inclination_error_min_EU | inclination_error_max_EU | . | HD 97658 | HD 97658 b | 0.02375 | 0.00249 | 0.00261 | 0.20047 | 0.00848 | 0.00874 | 9.4903 | 0.0015 | 0.0016 | 0.08 | 0.018 | 0.0017 | 0.078 | 0.053 | 0.057 | 89.14 | 0.36 | 0.52 | . | GJ 1132 | GJ 1132 b | 0.00522 | 0.00072 | 0.00072 | 0.1035 | 0.0098 | 0.0098 | 1.62893 | 2.7e-05 | 2.7e-05 | 0.0154 | 0.0015 | 0.0015 | nan | nan | nan | nan | nan | nan | . | GJ 1132 | GJ 1132 c | 0.00831 | 0.00138 | 0.00138 | nan | nan | nan | 8.929 | 0.01 | 0.01 | 0.0476 | 0.0017 | 0.0017 | 0.27 | 0.27 | nan | nan | nan | nan | . | 55 Cnc | 55 Cnc e | 0.02703 | 0.00135 | 0.00135 | 0.1737 | 0.00339 | 0.00339 | 0.736548 | 1.2e-06 | 1.6e-06 | 0.015439 | 1.5e-05 | 1.5e-05 | 0.028 | 0.019 | 0.022 | 90.36 | 4.66 | 3.96 | . | GJ 3470 | GJ 3470 b | 0.03958 | 0.00403 | 0.00412 | 0.373807 | 0.0526364 | 0.0526364 | 3.33665 | 8.1e-05 | 8.4e-05 | 0.03557 | 0.001 | 0.001 | 0.114 | 0.052 | 0.052 | 88.3 | 0.5 | 0.5 | . | Kepler-138 | Kepler-138 b | 0.00021 | 0.00012 | 0.00019 | 0.052 | 0.006 | 0.006 | 10.3132 | 2.65e-05 | 2.65e-05 | 0.0746 | nan | nan | nan | nan | nan | 89.95 | nan | nan | . | Kepler-138 | Kepler-138 c | 0.00318 | 0.0011 | 0.0013 | 0.144 | 0.013 | 0.014 | 13.7816 | 0.00014 | 0.00019 | nan | nan | nan | 0.05 | 0.025 | 0.049 | nan | nan | nan | . | Kepler-138 | Kepler-138 d | 0.00318 | 0.00107 | 0.00132 | 0.1436 | 0.0134 | 0.0143 | 23.0893 | 0.00071 | 0.00071 | nan | nan | nan | 0.024 | 0.016 | 0.03 | nan | nan | nan | . | Kepler-18 | Kepler-18 b | 0.0216153 | 0.0109492 | 0.0109492 | 0.178428 | 0.00802928 | 0.00802928 | 3.50473 | 2.8e-05 | 2.8e-05 | 0.0447 | 0.0006 | 0.0006 | nan | nan | nan | 84.92 | 0.26 | 0.26 | . | Kepler-18 | Kepler-18 c | 0.054117 | 0.00597804 | 0.00597804 | 0.488894 | 0.0223035 | 0.0223035 | 7.64159 | 3e-05 | 3e-05 | 0.0752 | 0.0011 | 0.0011 | nan | nan | nan | 87.68 | 0.22 | 0.22 | . | Kepler-18 | Kepler-18 d | 0.0512853 | 0.00437341 | 0.00437341 | 0.621823 | 0.0285485 | 0.0285485 | 14.8589 | 4e-05 | 4e-05 | 0.1172 | 0.0017 | 0.0017 | nan | nan | nan | 88.07 | 0.1 | 0.1 | . | HD 219134 | HD 219134 b | 0.01491 | 0.0006 | 0.0006 | 0.14292 | 0.00491 | 0.00491 | 3.0931 | 0.0001 | 0.0001 | 0.038474 | 8e-07 | 8e-07 | nan | nan | 0.13 | 85.058 | 0.08 | 0.08 | . | HD 219134 | HD 219134 g | 0.034 | 0.004 | 0.004 | nan | nan | nan | 94.2 | 0.2 | 0.2 | 0.3753 | 0.0004 | 0.0004 | nan | nan | nan | nan | nan | nan | . | 2MASS J23062928-0502285 | TRAPPIST-1 b | 0.0027 | 0.0023 | 0.0023 | 0.09689 | 0.00031 | 0.00031 | 1.51087 | 6e-05 | 6e-05 | 0.01111 | 0.00034 | 0.00034 | nan | nan | 0.081 | 89.65 | 0.27 | 0.27 | . | 2MASS J23062928-0502285 | TRAPPIST-1 c | 0.00434 | 0.0019 | 0.0019 | 0.09421 | 0.00031 | 0.00031 | 2.42182 | 1.7e-06 | 1.7e-06 | 0.01521 | 0.00047 | 0.00047 | nan | nan | 0.083 | 89.67 | 0.17 | 0.17 | . | 2MASS J23062928-0502285 | TRAPPIST-1 d | 0.0013 | 0.00085 | 0.00085 | 0.0689 | 0.0027 | 0.0027 | 4.04961 | 6.3e-05 | 6.3e-05 | 0.02144 | 0.00063 | 0.00066 | nan | nan | 0.7 | 89.75 | 0.16 | 0.16 | . | 2MASS J23062928-0502285 | TRAPPIST-1 e | 0.002 | 0.0018 | 0.0018 | 0.0819 | 0.0035 | 0.0035 | 6.09962 | 1.1e-05 | 1.1e-05 | 0.02817 | 0.00087 | 0.00083 | nan | 0.085 | 0.085 | 89.86 | 0.12 | 0.1 | . | 2MASS J23062928-0502285 | TRAPPIST-1 f | 0.0021 | 0.00057 | 0.00057 | 0.09323 | 0.0034 | 0.0034 | 9.20669 | 1.5e-05 | 1.5e-05 | 0.0371 | 0.0011 | 0.0011 | nan | nan | 0.063 | 89.68 | 0.034 | 0.034 | . | 2MASS J23062928-0502285 | TRAPPIST-1 g | 0.00422 | 0.0028 | 0.0028 | 0.1005 | 0.0037 | 0.0037 | 12.3529 | 0.00012 | 0.00012 | 0.0451 | 0.0014 | 0.0014 | nan | nan | 0.061 | 89.71 | 0.025 | 0.025 | . ",
+    "url": "/docs/datasets.html",
+    
+    "relUrl": "/docs/datasets.html"
+  },"52": {
     "doc": "Git Instructions",
     "title": "Git Instructions",
     "content": ". | General workflow | First time setup: how to install the project repository . | Fork the repo | Clone repo to local computer | . | Commit and push changes results to your fork | Pull requests: update the main repository with your code | Syncing: update your fork with changes from the main repo | For more instructions see here | . ",
     "url": "/docs/git_instructions.html",
     
     "relUrl": "/docs/git_instructions.html"
-  },"52": {
+  },"53": {
     "doc": "Git Instructions",
     "title": "General workflow",
     "content": "We will be using github to manage uploading our results for the project and sharing work . Git cheat sheet . ",
     "url": "/docs/git_instructions.html#general-workflow",
     
     "relUrl": "/docs/git_instructions.html#general-workflow"
-  },"53": {
+  },"54": {
     "doc": "Git Instructions",
     "title": "First time setup: how to install the project repository",
     "content": "Fork the repo . Navigate to https://github.com/jbirky/yupra on your browser. In the upper right corner, select the Fork button: . Choose yourself as the owner for the forked repo and check “copy main branch only”: . (Note: Step 1 only needs to be done once.) . Clone repo to local computer . Now we want to clone our fork of the repository onto our local machine. We can put this in the same research/ directory as our other files. To do this, change directories to your research/ folder: . cd ~/research . Within the research directory, download the repo by using the clone command (and replacing jbirky in the url with your own github username): . git clone https://github.com/jbirky/yupra . If you type ls, you should now see all of the packages we’ve downloaded plus the yupra repo: . /research /alabi /vplanet /vplanet_inference /yupra ... Now we’ll create a new folder within the yupra project to store our code and results. To do this, navigate to yupra directory and create a new folder with your name: . cd yupra mkdir jbirky . This is the folder where you’ll add all the code that you write (note: you only need to create this folder once). ",
     "url": "/docs/git_instructions.html#first-time-setup-how-to-install-the-project-repository",
     
     "relUrl": "/docs/git_instructions.html#first-time-setup-how-to-install-the-project-repository"
-  },"54": {
+  },"55": {
     "doc": "Git Instructions",
     "title": "Commit and push changes results to your fork",
     "content": "Copy the tutorial files to your personal folder: . cp -r tutorials/ jbirky/tutorials . Now if you type . git status . you can check that git has tracked that new files have been added or modified, and the status command should show something like . Untracked files: (use \"git add &lt;file&gt;...\" to include in what will be committed) jbirky/ . To take changes we’ve made on our local machine and upload them back to our repo fork, we need to add the new files, commit the changes with a commit message, and push them to upload: . git add jbirky/ git commit -m \"copy tutorials\" git push . now if you go back to the webpage of your fork https://github.com/username/yupra, you should see that your new files have been uploaded. ",
     "url": "/docs/git_instructions.html#commit-and-push-changes-results-to-your-fork",
     
     "relUrl": "/docs/git_instructions.html#commit-and-push-changes-results-to-your-fork"
-  },"55": {
+  },"56": {
     "doc": "Git Instructions",
     "title": "Pull requests: update the main repository with your code",
     "content": "Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select Contribute: . This will now create a pull request, allowing your fork username/yupra to be merged with the main repo jbirky/yupra. ",
     "url": "/docs/git_instructions.html#pull-requests-update-the-main-repository-with-your-code",
     
     "relUrl": "/docs/git_instructions.html#pull-requests-update-the-main-repository-with-your-code"
-  },"56": {
+  },"57": {
     "doc": "Git Instructions",
     "title": "Syncing: update your fork with changes from the main repo",
     "content": "Go to the webpage of your fork https://github.com/username/yupra, and in the upper right select Sync fork: . This will sync changes made by others from the main repo jbirky/yupra to your own fork fork username/yupra. Then to update the code on your local computer, go to your research/yupra directory and pull the latest version of your fork: . git pull . ",
     "url": "/docs/git_instructions.html#syncing-update-your-fork-with-changes-from-the-main-repo",
     
     "relUrl": "/docs/git_instructions.html#syncing-update-your-fork-with-changes-from-the-main-repo"
-  },"57": {
+  },"58": {
     "doc": "Git Instructions",
     "title": "For more instructions see here",
     "content": ". | Git cheat sheet . | How to fork a repo . | How to update your fork . | . ",
     "url": "/docs/git_instructions.html#for-more-instructions-see-here",
     
     "relUrl": "/docs/git_instructions.html#for-more-instructions-see-here"
-  },"58": {
+  },"59": {
     "doc": "Home",
     "title": "YUPRA",
     "content": "Welcome to the YVC-UW Partnership for Research in Astrophysics (YUPRA) summer REU program! . Github repository for the project: https://github.com/jbirky/yupra . ",
     "url": "/#yupra",
     
     "relUrl": "/#yupra"
-  },"59": {
+  },"60": {
     "doc": "Home",
     "title": "Meeting Schedule",
-    "content": "|   | Mon | Tue | Wed | Thu | Fri | . | Week 1 (6/17) | In person intro at YVC |   | Holiday - no meeting |   | 11:30 - 12:30: Rory’s group meeting | . | Week 2 (6/24) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 3 (7/01) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 4 (7/08) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 5 (7/15) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 6 (7/22) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 7 (7/29) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 8 (8/05) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 9 (8/12) | 10:30 - 11:30: practice presentations |   | 9 - 12: research symposium at UW |   |   | . UW undergrad symposium: Wednesday August 14, 2024 from 9:00 am – 12:00 pm . ",
+    "content": "|   | Mon | Tue | Wed | Thu | Fri | . | Week 1 (6/17) | In person intro at YVC |   | Holiday - no meeting |   | 11:30 - 12:30: Rory’s group meeting | . | Week 2 (6/24) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 3 (7/01) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 4 (7/08) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 5 (7/15) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 6 (7/22) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 7 (7/29) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 8 (8/05) | 10:30 - 11:30: check-in and goals |   | 10:30 - 11:30: midweek check-in |   | 11:30 - 12:30: Rory’s group meeting | . | Week 9 (8/12) | 10:30 - 11:30: practice presentations |   | 9 - 12: research symposium at UW |   |   | . UW undergrad symposium: Wednesday August 14, 2024 from 9:00 am – 12:00 pm . Other weekly events: . YVC Pizza and science Wednesdays . Each Wednesday in July (except Jul 3 when the college is closed). 12-1pm in Glenn Anthon 219 . YVC Intro to summer research with a focus on library research skills and research ethics . June 13 and 14, 9am-noon, Glenn Anthon 219 . Washington space grant SURP workshops . Date: Fridays, starting 6/21 until 8/9 . Time: 1pm - 2pm PST . Zoom: https://washington.zoom.us/my/waspacegrant . Session topics currently planned: . | 6/21 Orientation | 6/28 Academic Success Skills | 7/5 How to do a literature review and read a research paper | 7/12 How to write an abstract; How to make a poster | 7/19 Applying to Graduate School (Is Grad School Right for You?) | 7/26 AI &amp; Research and Tools | 8/2 Crafting a Resume/CV | 8/9 How to Present Research | . ",
     "url": "/#meeting-schedule",
     
     "relUrl": "/#meeting-schedule"
-  },"60": {
+  },"61": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"61": {
+  },"62": {
     "doc": "Resources",
     "title": "Resources",
     "content": " ",
     "url": "/docs/resources.html",
     
     "relUrl": "/docs/resources.html"
-  },"62": {
+  },"63": {
     "doc": "Resources",
     "title": "Relevant Papers",
     "content": ". | Barnes et al. 2019: VPLanet: The Virtual Planet Simulator . | Baraffe et al. 2015: New evolutionary models for pre-main sequence and main sequence low-mass stars down to the hydrogen-burning limit . | Fleming et al. 2019: On The XUV Luminosity Evolution of TRAPPIST-1 . | Birky et al. 2021: Improved Constraints for the XUV Luminosity Evolution of Trappist-1 . | Johnstone et al. 2020: The active lives of stars: a complete description of rotation and XUV evolution of F, G, K, and M dwarfs . | Barnes et al. (In prep): History and Habitability of the LP 890-9 Planetary System . | Gibor Basri (book): An Introduction to Stellar Magnetic Activity . | . ",
     "url": "/docs/resources.html#relevant-papers",
     
     "relUrl": "/docs/resources.html#relevant-papers"
-  },"63": {
+  },"64": {
     "doc": "Resources",
     "title": "Presentations",
     "content": ". | Introduction to the REU (Rory’s talk 6/17): [slides] . | Planetary Evolution and Habitability (Rory’s talk 6/17): [slides] . | Stellar Evolution (Jess’s talk 6/17): [slides] . | Intro to alabi talk: [slides] . | XUV evolution of Trappist-1 (Cool Stars 21 conference poster): [poster] . | . ",
     "url": "/docs/resources.html#presentations",
     
     "relUrl": "/docs/resources.html#presentations"
-  },"64": {
+  },"65": {
     "doc": "Resources",
     "title": "Tools/Links",
     "content": "These are various tools I use on a daily basis for my research: . | zotero - literature/citation manager application . | zotero browswer connector - web browser extension (for firefox, chrome, safari, edge) that automatically downloads papers on your current browser page to your zotero application . | simbad - database of astronomical objects where you can search for data on particular objects . | arxiv - browse recently published papers in astronomy . | ads search - search for papers by author, year, journal, etc. | astrobites - summaries of papers written at an undergrad level . | vscode - code editor . | Github copilot - AI chat/pair programmer for vs code . | . ",
     "url": "/docs/resources.html#toolslinks",
     
     "relUrl": "/docs/resources.html#toolslinks"
-  },"65": {
+  },"66": {
+    "doc": "Resources",
+    "title": "Scientific computing workshop",
+    "content": ". | Notebooks from Rudy’s scientific computing workshop: https://github.com/jbirky/yupra/tree/main/workshop . | Additional software carpentry tutorials: https://software-carpentry.org/lessons/ . | . ",
+    "url": "/docs/resources.html#scientific-computing-workshop",
+    
+    "relUrl": "/docs/resources.html#scientific-computing-workshop"
+  },"67": {
     "doc": "Resources",
     "title": "Links to code docs",
     "content": ". | vplanet . | vplanet_inference . | alabi . | dynesty . | emcee . | astropy . | . ",
     "url": "/docs/resources.html#links-to-code-docs",
     
     "relUrl": "/docs/resources.html#links-to-code-docs"
-  },"66": {
+  },"68": {
     "doc": "Tasks",
     "title": "To do items",
     "content": ". 06/17 . | Set up Git instructions . | Complete Tutorial 1 . | Fill out Week 1 survey . | . Some further videos you can check out . Stellar Evolution: . | https://www.youtube.com/watch?v=wKxArKOxhsY . | https://www.youtube.com/watch?v=ye9vu_ozj44 . | . Git tutorials: . | https://www.youtube.com/watch?v=USjZcfj8yxE . | https://www.youtube.com/watch?v=8JJ101D3knE . | . ",
     "url": "/docs/tasks.html#to-do-items",
     
     "relUrl": "/docs/tasks.html#to-do-items"
-  },"67": {
+  },"69": {
     "doc": "Tasks",
     "title": "Tasks",
     "content": " ",
     "url": "/docs/tasks.html",
     
     "relUrl": "/docs/tasks.html"
-  },"68": {
+  },"70": {
     "doc": "Tutorials",
     "title": "Tutorials",
     "content": ". | Introduction to vplanet . | how to configure and run simulations by command line | run makeplot and reproduce examples in the vplanet docs | run stellar evolution model in python | . | Parameter sweeps . | run parameter sweeps in python using vplanet_inference | exercise: given data from trappist 1, tweak the model parameters by hand to fit the data | how do we do this robustly while estimating the uncertainty? | . | Statistics I . | introduction to Bayesian statistics | introduction to markov chain monte carlo (MCMC) methods | example: fitting a line to data using emcee | . | Statistics II . | introduction to alabi | reproduce some examples in the alabi docs | reproduce trappist 1 analysis with alabi | . | . ",
