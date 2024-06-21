@@ -288,6 +288,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-include-cache
   just-the-docs
   webrick (~> 1.8)
 
