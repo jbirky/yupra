@@ -7,6 +7,11 @@ nav_order: 2
 # To do items
 {: .no_toc }
 
+* * *
+
+#### 06/24
+{: .no_toc }
+
 
 * * *
 
@@ -19,7 +24,7 @@ nav_order: 2
 
 - Fill out [Week 1 survey](https://forms.gle/56krJtSQxdPoZgri8)
 
-**Some further videos you can check out**
+Some further videos you can check out
 
 Stellar Evolution:
 
