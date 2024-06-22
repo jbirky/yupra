@@ -7,9 +7,26 @@ nav_order: 2
 # To do items
 {: .no_toc }
 
+* * * 
+
+Contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
+
+Code fixes / Updates
+{: .no_toc .text-delta }
+
+<span>Update 06/21</span>{: .label .label-green }
+Fixed the inpath issue and latex issue in [`tutorials/1_introduction_to_stellar.ipynb`](https://github.com/jbirky/yupra/blob/main/tutorials/1_introduction_to_stellar.ipynb). Infile templates have now been added to the project repo (in [`yupra/infiles`](https://github.com/jbirky/yupra/tree/main/infiles/stellar)) rather than pulling them from `vplanet_inference`.
+
 * * *
 
-#### Week 2 (06/24)
+### Week 2 
+
+#### 06/24
 {: .no_toc }
 
 1. Sync your fork at `https://github.com/<username>/yupra/` with the main repo 
@@ -72,7 +89,9 @@ nav_order: 2
 
 * * *
 
-#### Week 1 (06/17)
+### Week 1 
+
+#### 06/17
 {: .no_toc }
 
 - Set up [Git instructions](https://jbirky.github.io/yupra/docs/git_instructions.html)
