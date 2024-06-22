@@ -58,7 +58,7 @@ nav_order: 2
 5. Once you've completed the notebook above (doing parameter sweeps for Trappist-1), play around with the parameters for other stars using the data here and see if you can find a "best fit": [https://jbirky.github.io/yupra/docs/datasets.html](https://jbirky.github.io/yupra/docs/datasets.html)
 
 
-    | star | |
+    | star | assignee |
     | --- | --- |
     | 55 Cnc | Karime |
     | GJ 1132 | Josue |
