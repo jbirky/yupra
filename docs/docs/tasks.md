@@ -9,7 +9,7 @@ nav_order: 2
 
 * * *
 
-#### 06/24
+#### Week 2 (06/24)
 {: .no_toc }
 
 1. Sync your fork at `https://github.com/<username>/yupra/` with the main repo 
@@ -55,7 +55,7 @@ nav_order: 2
 
 4. Open jupyter notebook and navigate to the file you just copied at `<your username>/stellar_johnstone.ipynb`
 
-5. Once you've completed the notebook above (doing parameter sweeps for Trappist-1), play around with the parameters for other stars using the data here and see if you can find a "best fit": https://jbirky.github.io/yupra/docs/datasets.html
+5. Once you've completed the notebook above (doing parameter sweeps for Trappist-1), play around with the parameters for other stars using the data here and see if you can find a "best fit": [https://jbirky.github.io/yupra/docs/datasets.html](https://jbirky.github.io/yupra/docs/datasets.html)
 
 
     | star | |
@@ -72,7 +72,7 @@ nav_order: 2
 
 * * *
 
-#### 06/17
+#### Week 1 (06/17)
 {: .no_toc }
 
 - Set up [Git instructions](https://jbirky.github.io/yupra/docs/git_instructions.html)
