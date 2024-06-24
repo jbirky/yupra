@@ -54,6 +54,7 @@ Install `vplanet`: this is the main package for running stellar/exoplanet models
 git clone https://github.com/VirtualPlanetaryLaboratory/vplanet
 cd vplanet
 python setup.py develop
+cd ..
 ```
 
 Install `vplanet_inference`: this is the code we'll be using to run `vplanet` models using Python.
@@ -62,6 +63,7 @@ Install `vplanet_inference`: this is the code we'll be using to run `vplanet` mo
 git clone https://github.com/jbirky/vplanet_inference
 cd vplanet_inference
 python setup.py install
+cd ..
 ```
 
 Install `alabi`: this is the code we'll be using for running statistics with our models.
@@ -69,6 +71,7 @@ Install `alabi`: this is the code we'll be using for running statistics with our
 git clone https://github.com/jbirky/alabi  
 cd alabi  
 python setup.py install
+cd ..
 ```
 
 ## 4. Add repository paths to your bash profile

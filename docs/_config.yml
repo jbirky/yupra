@@ -6,3 +6,6 @@ author:
   name:           'Jessica Birky'
 
 remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-include-cache
