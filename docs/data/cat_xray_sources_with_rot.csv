@@ -1,0 +1,37 @@
+sy_name,hostname,st_age,st_ageerr1,st_ageerr2,st_agelim,st_vsin,st_vsinerr1,st_vsinerr2,st_vsinlim,st_rotp,st_rotperr1,st_rotperr2,st_rotplim,st_refname
+55 Cnc,55 Cnc,5.5,2.5,-2.5,0.0,,,,,38.5,3.5,-3.5,0.0,<a refstr=MARCY_ET_AL__2002 href=https://ui.adsabs.harvard.edu/abs/2002ApJ...581.1375M/abstract target=ref> Marcy et al. 2002 </a>
+55 Cnc,55 Cnc,9.5,,,0.0,,,,,,,,,<a refstr=TURNBULL_2015 href=https://ui.adsabs.harvard.edu/abs/2015arXiv151001731T/abstract target=ref>Turnbull 2015</a>
+55 Cnc,55 Cnc,,,,,1.23,0.01,-0.01,1.0,38.8,0.05,-0.05,0.0,<a refstr=BOURRIER_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...619A...1B/abstract target=ref>Bourrier et al. 2018</a>
+55 Cnc,55 Cnc,,,,,2.5,0.5,-0.5,0.0,,,,,<a refstr=VALENTI___FISCHER_2005 href=https://ui.adsabs.harvard.edu/abs/2005ApJS..159..141V/abstract target=ref> Valenti & Fischer 2005 </a>
+55 Cnc,55 Cnc,7.24,,,-1.0,,,,,,,,,<a refstr=TAKEDA_ET_AL__2007 href=https://ui.adsabs.harvard.edu/abs/2007ApJS..168..297T/abstract target=ref> Takeda et al. 2007</a>
+55 Cnc,55 Cnc,5.0,,,0.0,2.0,,,0.0,44.0,,,0.0,<a refstr=BUTLER_ET_AL__1997 href=https://ui.adsabs.harvard.edu/abs/1997ApJ...474L.115B/abstract target=ref> Butler et al. 1997 </a>
+55 Cnc,55 Cnc,,,,,,,3.3,0.9,-0.9,0.0,,,<a refstr=BOURRIER__AMP__H_EACUTE_BRARD_2014 href=https://ui.adsabs.harvard.edu/abs/2014A&A...569A..65B/abstract target=ref>Bourrier &amp
+55 Cnc,55 Cnc,10.2,2.5,-2.5,0.0,,,,,,,,,<a refstr=VON_BRAUN_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011ApJ...740...49V/abstract target=ref> von Braun et al. 2011 </a>
+GJ 1132,GJ 1132,5.0,,,-1.0,2.0,,,1.0,,,,,<a refstr=BERTA_THOMPSON_ET_AL__2015 href=http://www.nature.com/nature/journal/v527/n7577/full/nature15762.html target=ref>Berta-Thompson et al. 2015</a>
+GJ 1132,GJ 1132,,,,,,,,,122.31,6.03,-5.04,0.0,<a refstr=CLOUTIER_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017AJ....153....9C/abstract target=ref>Cloutier et al. 2017</a>
+GJ 1132,GJ 1132,,,,,,,,,122.3,6.0,-5.0,0.0,<a refstr=BONFILS_ET_AL__2018 href=https://ui.adsabs.harvard.edu/abs/2018A&A...618A.142B/abstract target=ref>Bonfils et al. 2018</a>
+GJ 3470,GJ 3470,1.65,1.35,-1.35,0.0,,,,,,,,,<a refstr=BONFILS_ET_AL__2012 href=https://ui.adsabs.harvard.edu/abs/2012A%26A...546A..27B/abstract target=ref> Bonfils et al. 2012 </a>
+GJ 3470,GJ 3470,2.5,1.5,-1.5,0.0,,,,,,,,,<a refstr=BIDDLE_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014MNRAS.443.1810B/abstract target=ref> Biddle et al. 2014</a>
+GJ 3470,GJ 3470,1.65,1.35,-1.35,0.0,,,,,21.54,0.49,-0.49,0.0,<a refstr=KOSIAREK_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019AJ....157...97K/abstract target=ref>Kosiarek et al. 2019</a>
+HD 219134,HD 219134,12.46,,,0.0,,,,,,,,,<a refstr=VOGT_ET_AL__2015 href=https://ui.adsabs.harvard.edu/abs/2015ApJ...814...12V/abstract target=ref>Vogt et al. 2015</a>
+HD 219134,HD 219134,,,,,2.0,,,0.0,,,,,<a refstr=NORDSTROM_ET_AL__2004 href=https://ui.adsabs.harvard.edu/abs/2004A&A...418..989N/abstract target=ref> Nordstrom et al. 2004 </a>
+HD 219134,HD 219134,11.0,2.2,-2.2,0.0,,,,,,,,,<a refstr=GILLON_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017NatAs...1E..56G/abstract target=ref>Gillon et al. 2017</a>
+HD 219134,HD 219134,,,,,0.4,0.5,-0.5,0.0,,,,,<a refstr=MOTALEBI_ET_AL__2015 href=https://ui.adsabs.harvard.edu/abs/2015A&A...584A..72M/abstract target=ref>Motalebi et al. 2015</a>
+HD 219134,HD 219134,,,,,1.8,0.5,-0.5,0.0,,,,,<a refstr=VALENTI___FISCHER_2005 href=https://ui.adsabs.harvard.edu/abs/2005ApJS..159..141V/abstract target=ref> Valenti & Fischer 2005 </a>
+HD 219134,HD 219134,11.0,2.2,-2.2,0.0,,,,,,,,,<a refstr=SEAGER_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....161..117S/abstract target=ref>Seager et al. 2021</a>
+HD 219134,HD 219134,12.46,,,0.0,,,,,,,,,<a refstr=TURNBULL_2015 href=https://ui.adsabs.harvard.edu/abs/2015arXiv151001731T/abstract target=ref>Turnbull 2015</a>
+HD 219134,HD 219134,12.46,,-11.96,0.0,,,,,,,,,<a refstr=TAKEDA_ET_AL__2007 href=https://ui.adsabs.harvard.edu/abs/2007ApJS..168..297T/abstract target=ref> Takeda et al. 2007</a>
+HD 97658,HD 97658,6.0,1.0,-1.0,0.0,0.5,0.5,-0.5,0.0,,,,,<a refstr=VAN_GROOTEL_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...786....2V/abstract target=ref> Van Grootel et al. 2014</a>
+HD 97658,HD 97658,0.64,5.48,,0.0,,,,,,,,,<a refstr=TAKEDA_ET_AL__2007 href=https://ui.adsabs.harvard.edu/abs/2007ApJS..168..297T/abstract target=ref> Takeda et al. 2007</a>
+HD 97658,HD 97658,3.9,2.6,-2.03,0.0,,,,,,,,,<a refstr=ELLIS_ET_AL__2021 href=https://ui.adsabs.harvard.edu/abs/2021AJ....162..118E/abstract target=ref>Ellis et al. 2021</a>
+HD 97658,HD 97658,,,,,1.5,0.5,-0.5,0.0,,,,,<a refstr=VALENTI___FISCHER_2005 href=https://ui.adsabs.harvard.edu/abs/2005ApJS..159..141V/abstract target=ref> Valenti & Fischer 2005 </a>
+HD 97658,HD 97658,,,,,0.5,0.5,-0.5,0.0,,,,,<a refstr=HOWARD_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011ApJ...730...10H/abstract target=ref> Howard et al. 2011 </a>
+HD 97658,HD 97658,0.64,,,0.0,,,,,,,,,<a refstr=TURNBULL_2015 href=https://ui.adsabs.harvard.edu/abs/2015arXiv151001731T/abstract target=ref>Turnbull 2015</a>
+Kepler-138,Kepler-138,4.68,5.53,-2.81,0.0,,,,,,,,,<a refstr=MORTON_ET_AL__2016 href=https://ui.adsabs.harvard.edu/abs/2016ApJ...822...86M/abstract target=ref>Morton et al. 2016</a>
+Kepler-18,Kepler-18,8.5,3.6,-3.6,0.0,,,,,,,,,<a refstr=Q1_Q8_KOI_TABLE href=https://exoplanetarchive.ipac.caltech.edu/docs/Kepler_KOI_docs.html target=ref>Q1-Q8 KOI Table</a>
+Kepler-18,Kepler-18,8.5,3.6,-3.6,0.0,,,,,,,,,<a refstr=Q1_Q8_KOI_TABLE href=https://exoplanetarchive.ipac.caltech.edu/docs/Kepler_KOI_docs.html target=ref>Q1-Q8 KOI Table</a>
+Kepler-18,Kepler-18,8.5,3.6,-3.6,0.0,,,,,,,,,<a refstr=Q1_Q8_KOI_TABLE href=https://exoplanetarchive.ipac.caltech.edu/docs/Kepler_KOI_docs.html target=ref>Q1-Q8 KOI Table</a>
+Kepler-18,Kepler-18,10.0,2.3,-2.3,0.0,4.0,,,1.0,,,,,<a refstr=COCHRAN_ET_AL__2011 href=https://ui.adsabs.harvard.edu/abs/2011ApJS..197....7C/abstract target=ref> Cochran et al. 2011 </a>
+Kepler-18,Kepler-18,10.72,2.0,-2.83,0.0,,,,,,,,,<a refstr=MORTON_ET_AL__2016 href=https://ui.adsabs.harvard.edu/abs/2016ApJ...822...86M/abstract target=ref>Morton et al. 2016</a>
+TRAPPIST-1,TRAPPIST-1,0.5,,,-1.0,,,,,1.4,0.05,-0.05,0.0,<a refstr=GILLON_ET_AL__2016 href=https://ui.adsabs.harvard.edu/abs/2016Natur.533..221G/abstract target=ref>Gillon et al. 2016</a>
+TRAPPIST-1,TRAPPIST-1,,,,,2.04,0.18,-0.16,0.0,,,,,<a refstr=HIRANO_ET_AL__2020 href=https://ui.adsabs.harvard.edu/abs/2020ApJ...890L..27H/abstract target=ref>Hirano et al. 2020</a>
