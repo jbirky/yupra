@@ -5,17 +5,14 @@ import multiprocessing as mp
 
 import vplanet_inference as vpi
 
+__all__ = ["StellarEvolutionModel"]
 
-j21 = {"beta1": (-0.135, 0.030),
-        "beta2": (-1.889, 0.079),
-        "Rosat": (0.0605, 0.00331),
-        "RXsat": (5.135e-4, 3.320e-5)}
 
 class StellarEvolutionModel:
 
     def __init__(self, star_name=None,
                         Lbol_data=None, 
-                        LXUV_data=None, 
+                        Lxuv_data=None, 
                         Lxray_data=None,
                         Prot_data=None,
                         age_data=None):
@@ -31,9 +28,9 @@ class StellarEvolutionModel:
             self.Lbol_data = None
             self.Lbol_unit = u.Lsun
 
-        if LXUV_data is not None:
-            self.Lxuv_data = LXUV_data.value
-            self.Lxuv_unit = LXUV_data.unit
+        if Lxuv_data is not None:
+            self.Lxuv_data = Lxuv_data.value
+            self.Lxuv_unit = Lxuv_data.unit
         else:
             self.Lxuv_data = None
             self.Lxuv_unit = u.Lsun
@@ -107,8 +104,12 @@ class StellarEvolutionModel:
 
         mstar, prot, age, beta1, beta2, Rosat, RXsat = theta
 
+        # Run the vplanet model with the input parameters
         evol = self.vpm.run_model(np.array([mstar, prot, age]), remove=True)
-        ross = evol["final.star.RossbyNumber"]
+
+        # adjust by scale factor to be consistent with Johnstone model 
+        evol["final.star.RossbyNumberScaled"] = evol["final.star.RossbyNumber"] * .95/2.11
+        ross = evol["final.star.RossbyNumberScaled"] 
         lbol = evol["final.star.Luminosity"]
         radius = evol["final.star.Radius"]
 
@@ -138,42 +139,6 @@ class StellarEvolutionModel:
 
         return evol
 
-    # def plot_evolution
-    def plot_evolution(self, evols, title="Johnstone 2021"):
-
-        fig, axs = plt.subplots(3, 1, figsize=[10,14], sharex=True)
-
-        for evol in evols:
-            lbol = evol["final.star.Luminosity"].to(u.erg/u.s)
-            lxuv = evol["final.star.LXUV"].to(u.erg/u.s)
-            prot = evol["final.star.RotPer"]
-
-            axs[0].plot(evol["Time"], lbol, color="k", alpha=0.5)
-            axs[1].plot(evol["Time"], lxuv, color="k", alpha=0.5)
-            axs[2].plot(evol["Time"], prot, color="k", alpha=0.5)
-
-        axs[0].set_title(title, fontsize=24)
-        axs[0].set_ylabel("Bolometric Luminosity [{}]".format(lbol.unit), fontsize=20)
-        axs[0].set_xscale('log')
-        axs[0].set_yscale('log')
-
-        axs[1].set_ylabel("XUV Luminosity [{}]".format(lxuv.unit), fontsize=20)
-        axs[1].set_xscale('log')
-        axs[1].set_yscale('log')
-
-        axs[2].set_ylabel("Rotation Period [{}]".format(prot.unit), fontsize=20)
-        axs[2].set_xlabel("Time [yr]", fontsize=20)
-        axs[2].set_xscale('log')
-        axs[2].set_yscale('log')
-
-        axs[0].set_xlim(evol["Time"][1].value, evol["Time"][-1].value)
-        plt.tight_layout()
-        
-        return fig
-    
-    # def plot_evolution_with_data(self, evols):
-        # fig = self.plot_evolution([evols])
-
     # def compute_chi_squared_fit (inputs: data)
     def compute_chi_squared_fit(self):
 
@@ -200,8 +165,6 @@ class StellarEvolutionModel:
             Lxray_data_mean = self.Lxray_data[0]
             Lxray_data_std = self.Lxray_data[1]
 
-            print("lxray", final_lxray, Lxray_data_mean, Lxray_data_std)
-
             chi_squared_xray = (final_lxray - Lxray_data_mean)**2 / Lxray_data_std**2
             chi_squared.append(chi_squared_xray)
 
@@ -210,8 +173,6 @@ class StellarEvolutionModel:
             Prot_data_mean = self.Prot_data[0]
             Prot_data_std = self.Prot_data[1]
 
-            print("prot", final_prot, Prot_data_mean, Prot_data_std)
-
             chi_squared_prot = (final_prot - Prot_data_mean)**2 / Prot_data_std**2
             chi_squared.append(chi_squared_prot)
 
@@ -219,8 +180,6 @@ class StellarEvolutionModel:
             final_age = self.evol["Time"].value[-1]
             age_data_mean = self.age_data[0]
             age_data_std = self.age_data[1]
-
-            print("age", final_age, age_data_mean, age_data_std)
 
             chi_squared_age = (final_age - age_data_mean)**2 / age_data_std**2
             chi_squared.append(chi_squared_age)
@@ -260,7 +219,7 @@ class StellarEvolutionModel:
         axs[1].set_yscale('log')
 
         axs[2].set_ylabel("Rotation Period [{}]".format(prot.unit), fontsize=20)
-        axs[2].set_xlabel("Time [yr]", fontsize=20)
+        axs[2].set_xlabel("Time [{}]".format(evol["Time"].unit), fontsize=20)
         axs[2].set_xscale('log')
         axs[2].set_yscale('log')
 
@@ -280,9 +239,10 @@ class StellarEvolutionModel:
             axs[2].axhline(self.Prot_data[0], color="r", linestyle="--")
             axs[2].axhspan(self.Prot_data[0]-self.Prot_data[1], self.Prot_data[0]+self.Prot_data[1], color="r", alpha=0.2)
 
-        for ii in range(len(axs)):
-            axs[ii].axvline(self.age_data[0], color="r", linestyle="--")
-            axs[ii].axvspan(self.age_data[0]+self.age_data[1], self.age_data[0]+self.age_data[2], color="r", alpha=0.2)
+        if self.age_data is not None:
+            for ii in range(len(axs)):
+                axs[ii].axvline(self.age_data[0], color="r", linestyle="--")
+                axs[ii].axvspan(self.age_data[0]+self.age_data[1], self.age_data[0]+self.age_data[2], color="r", alpha=0.2)
 
         axs[0].set_xlim(min(evol["Time"][1:].value), max(evol["Time"][1:].value))
         plt.tight_layout()
@@ -294,15 +254,20 @@ class StellarEvolutionModel:
 
 if __name__ == '__main__':
 
+    j21 = {"beta1": (-0.135, 0.030),
+           "beta2": (-1.889, 0.079),
+           "Rosat": (0.0605, 0.00331),
+           "RXsat": (5.135e-4, 3.320e-5)}
+
     Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
     Lxuv_data = np.array([1.0e-4, 0.1e-4]) * Lbol_data 
     Prot_data = np.array([3.295, 0.003]) * u.day
-    age_data = np.array([7.6, -2.2, 2.2]) * u.Gyr
+    age_data = np.array([7.6, 2.2]) * u.Gyr
 
     # Initialize stellar evolution model 
     model = StellarEvolutionModel(star_name="Trappist-1",
                                   Lbol_data=Lbol_data, 
-                                  LXUV_data=Lxuv_data, 
+                                  Lxuv_data=Lxuv_data, 
                                   Prot_data=Prot_data,
                                   age_data=age_data)
     
@@ -318,18 +283,21 @@ if __name__ == '__main__':
     # ------------------------------------
     # Run parameter sweep
 
-    nsamp = 4
-    mass_samp = np.random.normal(0.089, 0.007, nsamp)
-    prot_samp = np.random.uniform(0.01, 5.0, nsamp)
-    age_samp = np.ones(nsamp) * 9.0
-    beta1_samp = np.random.normal(j21["beta1"][0], j21["beta1"][1], nsamp)
-    beta2_samp = np.random.normal(j21["beta2"][0], j21["beta2"][1], nsamp)
-    Rosat_samp = np.random.normal(j21["Rosat"][0], j21["Rosat"][1], nsamp)
-    RXsat_samp = np.random.normal(j21["RXsat"][0], j21["RXsat"][1], nsamp)
+    # nsamp = 4
+    # mass_samp = np.random.normal(0.089, 0.007, nsamp)
+    # prot_samp = np.random.uniform(0.01, 5.0, nsamp)
+    # age_samp = np.ones(nsamp) * 9.0
+    # beta1_samp = np.random.normal(j21["beta1"][0], j21["beta1"][1], nsamp)
+    # beta2_samp = np.random.normal(j21["beta2"][0], j21["beta2"][1], nsamp)
+    # Rosat_samp = np.random.normal(j21["Rosat"][0], j21["Rosat"][1], nsamp)
+    # RXsat_samp = np.random.normal(j21["RXsat"][0], j21["RXsat"][1], nsamp)
 
-    thetas = np.array([mass_samp, prot_samp, age_samp, beta1_samp, beta2_samp, Rosat_samp, RXsat_samp]).T
+    # thetas = np.array([mass_samp, prot_samp, age_samp, beta1_samp, beta2_samp, Rosat_samp, RXsat_samp]).T
 
-    evols = model.run_parameter_sweep(thetas)
-    fig = model.plot_evolution(evols, show=True)
-    fig.savefig("trappist1_evolution.png")
+    # evols = model.run_parameter_sweep(thetas)
+    # fig = model.plot_evolution(evols, show=True)
+    # fig.savefig("trappist1_evolution.png")
 
+    # --------------------------------------
+
+    # mstar, prot, age, beta1, beta2, Rosat, RXsat
