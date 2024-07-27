@@ -105,12 +105,25 @@ sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps,
                     labels=labels, scale="nlog")
 
 # Compute an initial training sample and train the GP
-sm.init_samples(ntrain=200, ntest=100, reload=False)
+sm.init_samples(ntrain=20, ntest=10, reload=False)
 sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
 
 # Train the GP using the active learning algorithm
 sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
 sm.plot(plots=["gp_all"])
 
-# Reload the saved model
+# Reload the saved model and continue training
 sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
+sm.plot(plots=["gp_all"])
+
+# Reload the saved model and run MCMC
+sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+
+# MCMC with emcee
+sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=5e4, opt_init=False)
+sm.plot(plots=["emcee_corner"])
+
+# MCMC with dynesty
+sm.run_dynesty(ptform=prior_transform, mode='dynamic')
+sm.plot(plots=["dynesty_all"])
