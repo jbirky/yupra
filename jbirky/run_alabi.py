@@ -40,8 +40,10 @@ prior_data = [(mass_data[0].value, mass_data[1].value),        # mass [Msun]
 
 # Prior bounds (min and max) for each input parameter
 # let the mass bounds be 5 sigma away from the mean
-min_mass = mass_data[0].value - 5*mass_data[1].value
-max_mass = mass_data[0].value + 5*mass_data[1].value
+grid_min = 0.07
+grid_max = 1.4
+min_mass = max(mass_data[0].value - 5*mass_data[1].value, grid_min)
+max_mass = min(mass_data[0].value + 5*mass_data[1].value, grid_max)
 
 bounds = [(min_mass, max_mass),     # mass [Msun]        
           (0.1, 12.0),              # Prot initial [days]
@@ -54,9 +56,14 @@ bounds = [(min_mass, max_mass),     # mass [Msun]
 # Initialize stellar evolution model 
 # We will try multiple configurations using different combinations of data
 # but for now we will use the Lbol and Lxray data ()
-model = StellarEvolutionModel(star_name=star_name,
-                              Lbol_data=Lbol_data, 
-                              Lxuv_data=Lxuv_data)
+
+model1 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Lxuv_data=Lxuv_data)
+
+model2 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Prot_data=Prot_data)
 
 # ========================================================
 # Configure prior 
@@ -88,6 +95,10 @@ def lnpost(theta):
 # Run alabi
 # ========================================================
 
+# change these to run different models
+model = model2
+save_dir = f"results/model2"
+
 kernel = "ExpSquaredKernel"
 
 # labels for input parameters
@@ -99,18 +110,33 @@ labels = [r"$m_{\star}$ [M$_{\odot}$]",
           r"$R_{\rm sat}$", 
           r"$R_{X,\rm sat}$"]
 
-# Initialize the surrogate model
-sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
-                    savedir=f"results/{kernel}", cache=True,
-                    labels=labels, scale="nlog")
+if __name__ == "__main__":
 
-# Compute an initial training sample and train the GP
-sm.init_samples(ntrain=200, ntest=100, reload=False)
-sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
+    # Initialize the surrogate model
+    sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
+                        savedir=save_dir, cache=True,
+                        labels=labels, scale="nlog", ncore=4)
 
-# Train the GP using the active learning algorithm
-sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
-sm.plot(plots=["gp_all"])
+    # Compute an initial training sample and train the GP
+    sm.init_samples(ntrain=20, ntest=10, reload=False)
+    sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
 
-# Reload the saved model
-sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+    # Train the GP using the active learning algorithm
+    sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
+    sm.plot(plots=["gp_all"])
+
+    # Reload the saved model and continue training
+    sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+    sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
+    sm.plot(plots=["gp_all"])
+
+    # Reload the saved model and run MCMC
+    sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+
+    # MCMC with emcee
+    sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=int(5e4), opt_init=False)
+    sm.plot(plots=["emcee_corner"])
+
+    # MCMC with dynesty
+    sm.run_dynesty(ptform=prior_transform, mode='dynamic')
+    sm.plot(plots=["dynesty_all"])
