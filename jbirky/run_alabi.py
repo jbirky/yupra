@@ -96,8 +96,10 @@ def lnpost(theta):
 # ========================================================
 
 # change these to run different models
-model = model2
-save_dir = f"results/{star_name}/model2"
+test = "model1"
+model = eval(test)
+
+save_dir = f"results/{star_name}/{test}"
 
 kernel = "ExpSquaredKernel"
 
