@@ -15,12 +15,25 @@ from johnstone_model import StellarEvolutionModel
 # ========================================================
 
 # Observational data
-star_name = "Trappist-1"
-mass_data = np.array([0.08, 0.007]) * u.Msun
-Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
-Lxuv_data = np.array([1.0e-4, 0.1e-4]) * Lbol_data 
-Prot_data = np.array([3.295, 0.003]) * u.day
-age_data = np.array([7.6, 2.2]) * u.Gyr
+# star_name = "Trappist-1"
+# mass_data = np.array([0.08, 0.007]) * u.Msun
+# Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
+# Lxuv_data = np.array([1.0e-4, 0.1e-4]) * Lbol_data 
+# Prot_data = np.array([3.295, 0.003]) * u.day
+# age_data = np.array([7.6, 2.2]) * u.Gyr
+
+# star_name = "GJ 3470"
+# mass_data = np.array([0.51, 0.06]) * u.Msun
+# Lbol_data = np.array([0.029, 0.002]) * u.Lsun
+# Lxray_data = np.array([4.43e27, 7.88e26]) * u.erg/u.s
+# Prot_data = np.array([21.54, 0.49]) * u.day
+
+star_name = "55_Cnc"
+mass_data = np.array([0.85, 0.02]) * u.Msun
+Lbol_data = np.array([0.582, 0.014]) * u.Lsun
+Lxray_data = np.array([6.05e26, 5.23e25]) * u.erg / u.s
+Prot_data = np.array([38.8, 0.05]) * u.day
+age_data = np.array([10.2, 2.5]) * u.Gyr
 
 # ========================================================
 # Configure the model
@@ -40,18 +53,29 @@ prior_data = [(mass_data[0].value, mass_data[1].value),        # mass [Msun]
 
 # Prior bounds (min and max) for each input parameter
 # let the mass bounds be 5 sigma away from the mean
+sigma_factor = 5
+
 grid_min = 0.07
 grid_max = 1.4
-min_mass = max(mass_data[0].value - 5*mass_data[1].value, grid_min)
-max_mass = min(mass_data[0].value + 5*mass_data[1].value, grid_max)
+min_mass = max(mass_data[0].value - sigma_factor * mass_data[1].value, grid_min)
+max_mass = min(mass_data[0].value + sigma_factor * mass_data[1].value, grid_max)
 
-bounds = [(min_mass, max_mass),     # mass [Msun]        
-          (0.1, 12.0),              # Prot initial [days]
-          (0.1, 12.0),              # age [Gyr]
-          (-0.15, -0.1),            # beta1
-          (-2.0, -1.5),             # beta2
-          (0.01, 0.1),              # Rsat
-          (1.0e-4, 1.0e-3)]         # RXsat
+min_beta1 = prior_data[3][0] - sigma_factor * prior_data[3][1]
+max_beta1 = prior_data[3][0] + sigma_factor * prior_data[3][1]
+min_beta2 = prior_data[4][0] - sigma_factor * prior_data[4][1]
+max_beta2 = prior_data[4][0] + sigma_factor * prior_data[4][1]
+min_Rsat = prior_data[5][0] - sigma_factor * prior_data[5][1]
+max_Rsat = prior_data[5][0] + sigma_factor * prior_data[5][1]
+min_RXsat = prior_data[6][0] - sigma_factor * prior_data[6][1]
+max_RXsat = prior_data[6][0] + sigma_factor * prior_data[6][1]
+
+bounds = [(min_mass, max_mass),         # mass [Msun]        
+          (0.1, 12.0),                  # Prot initial [days]
+          (0.1, 12.0),                  # age [Gyr]
+          (min_beta1, max_beta1),       # beta1
+          (min_beta2, max_beta2),       # beta2
+          (min_Rsat, max_Rsat),         # Rsat
+          (min_RXsat, max_RXsat)]       # RXsat
 
 # Initialize stellar evolution model 
 # We will try multiple configurations using different combinations of data
@@ -59,10 +83,15 @@ bounds = [(min_mass, max_mass),     # mass [Msun]
 
 model1 = StellarEvolutionModel(star_name=star_name,
                                Lbol_data=Lbol_data, 
-                               Lxuv_data=Lxuv_data)
+                               Lxray_data=Lxray_data)
 
 model2 = StellarEvolutionModel(star_name=star_name,
                                Lbol_data=Lbol_data, 
+                               Prot_data=Prot_data)
+
+model3 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Lxray_data=Lxray_data,
                                Prot_data=Prot_data)
 
 # ========================================================
@@ -96,7 +125,7 @@ def lnpost(theta):
 # ========================================================
 
 # change these to run different models
-test = "model1"
+test = "model2"
 model = eval(test)
 
 save_dir = f"results/{star_name}/{test}"
@@ -117,10 +146,10 @@ if __name__ == "__main__":
     # Initialize the surrogate model
     sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
                         savedir=save_dir, cache=True,
-                        labels=labels, scale="nlog", ncore=4)
+                        labels=labels, scale=None, ncore=20)
 
     # Compute an initial training sample and train the GP
-    sm.init_samples(ntrain=20, ntest=10, reload=False)
+    sm.init_samples(ntrain=200, ntest=100, reload=False)
     sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
 
     # Train the GP using the active learning algorithm
@@ -129,6 +158,7 @@ if __name__ == "__main__":
 
     # Reload the saved model and run MCMC
     sm = alabi.cache_utils.load_model_cache(save_dir)
+    sm.savedir = save_dir
 
     # MCMC with emcee
     sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=int(5e4), opt_init=False)
@@ -137,3 +167,48 @@ if __name__ == "__main__":
     # MCMC with dynesty
     sm.run_dynesty(ptform=prior_transform, mode='dynamic')
     sm.plot(plots=["dynesty_all"])
+
+
+    # ========================================================
+    # Corner plot with priors 
+
+    import corner 
+    from scipy.stats import norm
+
+    emcee_samples = np.load(f"{save_dir}/emcee_samples_final.npz")["samples"]
+    dynesty_samples = np.load(f"{save_dir}/dynesty_samples_final.npz")["samples"]
+
+    lw = 1.5
+    colors = ["dimgrey", "royalblue", "r"]
+
+    fig = corner.corner(emcee_samples,  labels=labels, range=bounds,
+                        show_titles=True, verbose=False, max_n_ticks=4,
+                        plot_contours=True, plot_datapoints=True, plot_density=True,
+                        color=colors[0], no_fill_contours=False, title_kwargs={"fontsize": 16},
+                        label_kwargs={"fontsize": 22}, hist_kwargs={"linewidth":2.0, "density":True})
+    
+    fig = corner.corner(dynesty_samples, labels=labels, range=bounds, 
+                        show_titles=True, verbose=False, max_n_ticks=4, title_fmt='.3f',
+                        plot_contours=True, plot_datapoints=True, plot_density=True,
+                        color=colors[1], no_fill_contours=False, title_kwargs={"fontsize": 16},
+                        label_kwargs={"fontsize": 22}, hist_kwargs={"linewidth":2.0, "density":True},
+                        fig=fig)
+    
+    ax_list = fig.axes
+
+    xtext = 3.5
+    fig.axes[1].text(xtext, 0.725, r"--- Literature Priors", fontsize=26, color=colors[2], ha='left')
+    fig.axes[1].text(xtext, 0.55, r"--- emcee Posterior", fontsize=26, color=colors[0], ha='left')
+    fig.axes[1].text(xtext, 0.375, r"--- dynesty Posterior", fontsize=26, color=colors[1], ha='left')
+
+    panel = 0
+    for ii in range(len(bounds)):
+        x = np.linspace(bounds[ii][0], bounds[ii][1], 100)
+        if prior_data[ii][0] is not None:
+            ax_list[panel].plot(x, norm.pdf(x, loc=prior_data[ii][0], scale=prior_data[ii][1]),
+                                lw=lw, color=colors[2], linestyle='--')
+        else:
+            ax_list[panel].axhline(1 / (bounds[ii][1] - bounds[ii][0]), lw=lw, color=colors[2], linestyle='--')
+        panel += len(bounds) + 1
+
+    fig.savefig(f"{save_dir}/corner_plot_with_priors.png", dpi=300, bbox_inches="tight")
