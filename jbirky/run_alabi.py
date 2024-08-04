@@ -96,8 +96,10 @@ def lnpost(theta):
 # ========================================================
 
 # change these to run different models
-model = model2
-save_dir = f"results/model2"
+test = "model1"
+model = eval(test)
+
+save_dir = f"results/{star_name}/{test}"
 
 kernel = "ExpSquaredKernel"
 
@@ -125,13 +127,8 @@ if __name__ == "__main__":
     sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
     sm.plot(plots=["gp_all"])
 
-    # Reload the saved model and continue training
-    sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
-    sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
-    sm.plot(plots=["gp_all"])
-
     # Reload the saved model and run MCMC
-    sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+    sm = alabi.cache_utils.load_model_cache(save_dir)
 
     # MCMC with emcee
     sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=int(5e4), opt_init=False)
