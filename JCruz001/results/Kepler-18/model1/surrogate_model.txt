@@ -1,0 +1,36 @@
+==================================================================
+GP summary 
+==================================================================
+
+Configuration: 
+-------------- 
+Kernel: ExpSquaredKernel 
+Function bounds: [(0.21100000000000002, 0.891), (0.1, 12.0), (0.1, 12.0), (-0.28500000000000003, 0.014999999999999986), (-2.284, -1.494), (0.04395, 0.07705), (0.00034749999999999994, 0.0006795)] 
+fit mean: True 
+fit amplitude: False 
+fit white_noise: False 
+GP white noise: -15 
+Hyperparameter bounds: [[-54715.58186375057, 52975.38761270426], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20]] 
+Active learning algorithm : bape 
+
+Number of total training samples: 1200 
+Number of initial training samples: 200 
+Number of active training samples: 1000 
+Number of test samples: 100 
+
+Results: 
+-------- 
+GP final hyperparameters: 
+   [mean:value] 	-3443.544225182111 
+   [kernel:metric:log_M_0_0] 	-4.095400580975033 
+   [kernel:metric:log_M_1_1] 	2.3870858442364615 
+   [kernel:metric:log_M_2_2] 	-3.8394479584701267 
+   [kernel:metric:log_M_3_3] 	-4.67031937421677 
+   [kernel:metric:log_M_4_4] 	1.4156993873307708 
+   [kernel:metric:log_M_5_5] 	-7.398674458305739 
+   [kernel:metric:log_M_6_6] 	-16.688797838240564 
+
+Active learning train runtime (s): 14351.0 
+
+Final test error: 357019.7228044638 
+

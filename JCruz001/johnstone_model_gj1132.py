@@ -152,6 +152,13 @@ class StellarEvolutionModel:
 
         self.evol = evol
 
+        chi_sq = self.compute_chi_squared_fit()
+        print(chi_sq)
+        print(np.sum(chi_sq))
+
+        All_Chi_squared.append(np.sum(chi_sq))
+        print(All_Chi_squared)
+
         return evol
 
     #def plot_evolution
@@ -165,11 +172,14 @@ class StellarEvolutionModel:
             lbol = evol["final.star.Luminosity"].to(self.Lbol_unit)
              #lbol = evol["final.star.Luminosity"].to(u.erg/u.s)
             lxuv = evol["final.star.LXUV"].to(self.LXUV_unit)
+
+            lxray = evol["final.star.LXRAY"].to(self.Lxray_unit)
+
             #lxuv = evol["final.star.LXUV"].to(u.erg/u.s)
             prot = evol["final.star.RotPer"].to(self.Prot_unit)
 
             axs[0].plot(evol["Time"], lbol, color="k", alpha=0.5)
-            axs[1].plot(evol["Time"], lxuv, color="k", alpha=0.5)
+            axs[1].plot(evol["Time"], lxray, color="k", alpha=0.5)
             axs[2].plot(evol["Time"], prot, color="k", alpha=0.5)
 
         axs[0].set_title(title, fontsize=24)
@@ -178,7 +188,7 @@ class StellarEvolutionModel:
         axs[0].set_xscale('log')
         axs[0].set_yscale('log')
 
-        axs[1].set_ylabel("X-ray Luminosity [{}]".format(lxuv.unit), fontsize=20)
+        axs[1].set_ylabel("X-ray Luminosity [{}]".format(lxray.unit), fontsize=20)
         #axs[1].set_ylabel("X-ray Luminosity [{}]".format(lxuv.unit), fontsize=20)
         axs[1].set_xscale('log')
         axs[1].set_yscale('log')
@@ -205,9 +215,10 @@ class StellarEvolutionModel:
             axs[2].axhline(self.Prot_data[0], color="r", linestyle="--")
             axs[2].axhspan(self.Prot_data[0]-self.Prot_data[1], self.Prot_data[0]+self.Prot_data[1], color="r", alpha=0.2)
 
-        for ii in range(len(axs)):
-            axs[ii].axvline(self.age_data[0], color="r", linestyle="--")
-            axs[ii].axvspan(self.age_data[0]+self.age_data[1], self.age_data[0]+self.age_data[2], color="r", alpha=0.2)
+        if self.age_data is not None:
+            for ii in range(len(axs)):
+                axs[ii].axvline(self.age_data[0], color="r", linestyle="--")
+                axs[ii].axvspan(self.age_data[0]+self.age_data[1], self.age_data[0]+self.age_data[2], color="r", alpha=0.2)
 
         axs[0].set_xlim(min(evol["Time"][1:].value), max(evol["Time"][1:].value))
         plt.tight_layout()
@@ -262,11 +273,28 @@ class StellarEvolutionModel:
         pool.close()
 
         return evols
+    
+    def show_Chi(self, Chi, show=True):
+
+        
+        fog = plt.hist(Chi, color='skyblue', edgecolor = 'black')
+        plt.xlabel('model number')
+        plt.ylabel('Chi values')
+        plt.title('Chi squared Histogram')
+        
+        plt.tight_layout()
+        if show == True:
+            plt.show()
+        
+        return fog
+
 
 
 
 if  __name__ == '__main__':
     
+    All_Chi_squared = []
+
     
     Lbol_data = np.array([0.00438	,-0.00034,	0.00034]) * u.Lsun
     Lxray_data = (np.array([9.96e25,	-2.95e25,	2.95e25]) * u.erg / u.s)
@@ -299,8 +327,8 @@ if  __name__ == '__main__':
     #--------
 
     nsamp = 20
-    mass_samp = np.random.normal(0.181	, 0.019, nsamp)
-    prot_samp = np.random.uniform(0.01,10, nsamp)
+    mass_samp = np.random.normal(0.181, 0.019, nsamp)
+    prot_samp = np.random.uniform(0.01, 10, nsamp)
     age_samp = np.ones(nsamp) * 9.0
     beta1_samp = np.random.normal(j21["beta1"][0], j21["beta1"][1], nsamp)
     beta2_samp = np.random.normal(j21["beta2"][0], j21["beta2"][1], nsamp)
@@ -309,13 +337,20 @@ if  __name__ == '__main__':
 
     thetas = np.array([mass_samp, prot_samp, age_samp, beta1_samp, beta2_samp, Rosat_samp, RXsat_samp]).T
 
-    evols = model.run_parameter_sweep(thetas, 2)
-    fig = model.plot_evolution(evols, show=True)
-    fig.savefig("GJ_1132_evolution.png")
+    evols = model.run_parameter_sweep(thetas, 1)
+
+    print(All_Chi_squared)
+
+    #fig = model.plot_evolution(evols, show=False)
+    #fig.savefig("GJ_1132_evolution.png")
+
+    fog = model.show_Chi(All_Chi_squared, show=False)
 
 
+    
 
-
+#[166.88, 222.84, 146.71, 155.47, 164.399, 159.40, 152.34, 147.069, 189.93, 154.639, 163.455, 185.18, 223.71, 154.48, 148.73, 164.401, 149.868, 153.536, 168.122, 172.728]
+#[146.71806101165117, 159.40166281401923, 154.63973795005043, 154.4853124711643, 153.53677713656546, 172.7281554250169]
     #print(evol)
 
     #plt.plot(evol["Time"], evol["final.star.LXUV"])
