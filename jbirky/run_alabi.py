@@ -15,12 +15,27 @@ from johnstone_model import StellarEvolutionModel
 # ========================================================
 
 # Observational data
-star_name = "Trappist-1"
-mass_data = np.array([0.08, 0.007]) * u.Msun
-Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
-Lxuv_data = np.array([1.0e-4, 0.1e-4]) * Lbol_data 
-Prot_data = np.array([3.295, 0.003]) * u.day
-age_data = np.array([7.6, 2.2]) * u.Gyr
+
+# star_name = "Trappist-1"
+# mass_data = np.array([0.08, 0.007]) * u.Msun
+# Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
+# Lxuv_data = np.array([1.0e-4, 0.1e-4]) * Lbol_data 
+# Prot_data = np.array([3.295, 0.003]) * u.day
+# age_data = np.array([7.6, 2.2]) * u.Gyr
+
+star_name = "GJ_3470"
+mass_data = np.array([0.51, 0.06]) * u.Msun
+Lbol_data = np.array([0.029, 0.002]) * u.Lsun
+Lxray_data = np.array([4.43e27, 7.88e26]) * u.erg/u.s
+Prot_data = np.array([21.54, 0.49]) * u.day
+
+# star_name = "55_Cnc"
+# mass_data = np.array([0.85, 0.02]) * u.Msun
+# Lbol_data = np.array([0.582, 0.014]) * u.Lsun
+# Lxray_data = np.array([6.05e26, 5.23e25]) * u.erg / u.s
+# Prot_data = np.array([38.8, 0.05]) * u.day
+# age_data = np.array([10.2, 2.5]) * u.Gyr
+
 
 # ========================================================
 # Configure the model
@@ -40,23 +55,50 @@ prior_data = [(mass_data[0].value, mass_data[1].value),        # mass [Msun]
 
 # Prior bounds (min and max) for each input parameter
 # let the mass bounds be 5 sigma away from the mean
-min_mass = mass_data[0].value - 5*mass_data[1].value
-max_mass = mass_data[0].value + 5*mass_data[1].value
 
-bounds = [(min_mass, max_mass),     # mass [Msun]        
-          (0.1, 12.0),              # Prot initial [days]
-          (0.1, 12.0),              # age [Gyr]
-          (-0.15, -0.1),            # beta1
-          (-2.0, -1.5),             # beta2
-          (0.01, 0.1),              # Rsat
-          (1.0e-4, 1.0e-3)]         # RXsat
+sigma_factor = 5
+
+grid_min = 0.07
+grid_max = 1.4
+min_mass = max(mass_data[0].value - sigma_factor * mass_data[1].value, grid_min)
+max_mass = min(mass_data[0].value + sigma_factor * mass_data[1].value, grid_max)
+
+min_beta1 = prior_data[3][0] - sigma_factor * prior_data[3][1]
+max_beta1 = prior_data[3][0] + sigma_factor * prior_data[3][1]
+min_beta2 = prior_data[4][0] - sigma_factor * prior_data[4][1]
+max_beta2 = prior_data[4][0] + sigma_factor * prior_data[4][1]
+min_Rsat = prior_data[5][0] - sigma_factor * prior_data[5][1]
+max_Rsat = prior_data[5][0] + sigma_factor * prior_data[5][1]
+min_RXsat = prior_data[6][0] - sigma_factor * prior_data[6][1]
+max_RXsat = prior_data[6][0] + sigma_factor * prior_data[6][1]
+
+bounds = [(min_mass, max_mass),         # mass [Msun]        
+          (0.1, 12.0),                  # Prot initial [days]
+          (0.1, 12.0),                  # age [Gyr]
+          (min_beta1, max_beta1),       # beta1
+          (min_beta2, max_beta2),       # beta2
+          (min_Rsat, max_Rsat),         # Rsat
+          (min_RXsat, max_RXsat)]       # RXsat
+
 
 # Initialize stellar evolution model 
 # We will try multiple configurations using different combinations of data
 # but for now we will use the Lbol and Lxray data ()
-model = StellarEvolutionModel(star_name=star_name,
-                              Lbol_data=Lbol_data, 
-                              Lxuv_data=Lxuv_data)
+
+
+model1 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Lxray_data=Lxray_data)
+
+model2 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Prot_data=Prot_data)
+
+model3 = StellarEvolutionModel(star_name=star_name,
+                               Lbol_data=Lbol_data, 
+                               Lxray_data=Lxray_data,
+                               Prot_data=Prot_data)
+
 
 # ========================================================
 # Configure prior 
@@ -79,14 +121,25 @@ def lnlike(theta):
     _ = model.LXUV_model(theta)
     chi2_array = model.compute_chi_squared_fit()
     lnl = -0.5 * np.sum(chi2_array)
+
+    print("lnlike: ", lnl)
     return lnl
 
-def lnpost(theta):
-    return lnlike(theta) + lnprior(theta)
+# def lnpost(theta):
+#     return lnlike(theta) + lnprior(theta)
+
 
 # ========================================================
 # Run alabi
 # ========================================================
+
+
+# change these to run different models
+test = "model1"
+model = eval(test)
+
+save_dir = f"results/{star_name}/{test}/"
+
 
 kernel = "ExpSquaredKernel"
 
@@ -99,31 +152,33 @@ labels = [r"$m_{\star}$ [M$_{\odot}$]",
           r"$R_{\rm sat}$", 
           r"$R_{X,\rm sat}$"]
 
-# Initialize the surrogate model
-sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
-                    savedir=f"results/{kernel}", cache=True,
-                    labels=labels, scale="nlog")
 
-# Compute an initial training sample and train the GP
-sm.init_samples(ntrain=20, ntest=10, reload=False)
-sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
+if __name__ == "__main__":
 
-# Train the GP using the active learning algorithm
-sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
-sm.plot(plots=["gp_all"])
+    # Initialize the surrogate model
+    sm = SurrogateModel(fn=lnlike, bounds=bounds, prior_sampler=ps, 
+                        savedir=save_dir, cache=True,
+                        labels=labels, scale=None, ncore=22)
 
-# Reload the saved model and continue training
-sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
-sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
-sm.plot(plots=["gp_all"])
+    # Compute an initial training sample and train the GP
+    sm.init_samples(ntrain=200, ntest=100, reload=False)
+    sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
 
-# Reload the saved model and run MCMC
-sm = alabi.cache_utils.load_model_cache(f"results/{kernel}/")
+    # Train the GP using the active learning algorithm
+    sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
+    sm.plot(plots=["gp_all"])
 
-# MCMC with emcee
-sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=5e4, opt_init=False)
-sm.plot(plots=["emcee_corner"])
+    # # Reload the saved model and run MCMC
+    # sm = alabi.cache_utils.load_model_cache(save_dir)
+    # sm.savedir = save_dir
 
-# MCMC with dynesty
-sm.run_dynesty(ptform=prior_transform, mode='dynamic')
-sm.plot(plots=["dynesty_all"])
+    # sm.active_train(niter=500, algorithm="bape", gp_opt_freq=10)
+    # sm.plot(plots=["gp_all"])
+
+    # MCMC with emcee
+    sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=int(1e6), opt_init=False)
+    sm.plot(plots=["emcee_corner"])
+
+    # MCMC with dynesty
+    sm.run_dynesty(ptform=prior_transform, mode='dynamic')
+    sm.plot(plots=["dynesty_all"])
