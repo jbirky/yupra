@@ -15,6 +15,7 @@ from johnstone_model import StellarEvolutionModel
 # ========================================================
 
 # Observational data
+
 # star_name = "Trappist-1"
 # mass_data = np.array([0.08, 0.007]) * u.Msun
 # Lbol_data = np.array([5.22e-4, 0.19e-4]) * u.Lsun
@@ -35,6 +36,7 @@ Prot_data = np.array([21.54, 0.49]) * u.day
 # Prot_data = np.array([38.8, 0.05]) * u.day
 # age_data = np.array([10.2, 2.5]) * u.Gyr
 
+
 # ========================================================
 # Configure the model
 # ========================================================
@@ -53,6 +55,7 @@ prior_data = [(mass_data[0].value, mass_data[1].value),        # mass [Msun]
 
 # Prior bounds (min and max) for each input parameter
 # let the mass bounds be 5 sigma away from the mean
+
 sigma_factor = 5
 
 grid_min = 0.07
@@ -77,9 +80,11 @@ bounds = [(min_mass, max_mass),         # mass [Msun]
           (min_Rsat, max_Rsat),         # Rsat
           (min_RXsat, max_RXsat)]       # RXsat
 
+
 # Initialize stellar evolution model 
 # We will try multiple configurations using different combinations of data
 # but for now we will use the Lbol and Lxray data ()
+
 
 model1 = StellarEvolutionModel(star_name=star_name,
                                Lbol_data=Lbol_data, 
@@ -93,6 +98,7 @@ model3 = StellarEvolutionModel(star_name=star_name,
                                Lbol_data=Lbol_data, 
                                Lxray_data=Lxray_data,
                                Prot_data=Prot_data)
+
 
 # ========================================================
 # Configure prior 
@@ -115,21 +121,25 @@ def lnlike(theta):
     _ = model.LXUV_model(theta)
     chi2_array = model.compute_chi_squared_fit()
     lnl = -0.5 * np.sum(chi2_array)
+
     print("lnlike: ", lnl)
     return lnl
 
 # def lnpost(theta):
 #     return lnlike(theta) + lnprior(theta)
 
+
 # ========================================================
 # Run alabi
 # ========================================================
+
 
 # change these to run different models
 test = "model1"
 model = eval(test)
 
 save_dir = f"results/{star_name}/{test}/"
+
 
 kernel = "ExpSquaredKernel"
 
@@ -141,6 +151,7 @@ labels = [r"$m_{\star}$ [M$_{\odot}$]",
           r"$\beta_2$", 
           r"$R_{\rm sat}$", 
           r"$R_{X,\rm sat}$"]
+
 
 if __name__ == "__main__":
 
