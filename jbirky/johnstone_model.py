@@ -100,11 +100,13 @@ class StellarEvolutionModel:
         return self.flux_to_luminosity(FEUV, radius)
 
     # def LXUV_model
+
     def LXUV_model(self, theta, remove=True):
 
         mstar, prot, age, beta1, beta2, Rosat, RXsat = theta
 
         # Run the vplanet model with the input parameters
+
         evol = self.vpm.run_model(np.array([mstar, prot, age]), remove=remove)
 
         # adjust by scale factor to be consistent with Johnstone model 
@@ -202,21 +204,25 @@ class StellarEvolutionModel:
 
         for evol in evols:
             lbol = evol["final.star.Luminosity"].to(self.Lbol_unit)
+
             lxray = evol["final.star.LXRAY"].to(self.Lxray_unit)
             prot = evol["final.star.RotPer"].to(self.Prot_unit)
 
             axs[0].plot(evol["Time"], lbol, color="k", alpha=0.5)
             axs[1].plot(evol["Time"], lxray, color="k", alpha=0.5)
+
             axs[2].plot(evol["Time"], prot, color="k", alpha=0.5)
 
         axs[0].set_title(self.star_name, fontsize=24)
         axs[0].set_ylabel("Bolometric Luminosity [{}]".format(lbol.unit), fontsize=20)
+
         axs[1].set_xlabel("Time [{}]".format(evol["Time"].unit), fontsize=20)
         axs[0].set_xscale('log')
         axs[0].set_yscale('log')
 
         axs[1].set_ylabel("Xray Luminosity [{}]".format(lxray.unit), fontsize=20)
         axs[1].set_xlabel("Time [{}]".format(evol["Time"].unit), fontsize=20)
+
         axs[1].set_xscale('log')
         axs[1].set_yscale('log')
 
