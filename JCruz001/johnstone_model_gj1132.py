@@ -152,13 +152,6 @@ class StellarEvolutionModel:
 
         self.evol = evol
 
-        chi_sq = self.compute_chi_squared_fit()
-        print(chi_sq)
-        print(np.sum(chi_sq))
-
-        All_Chi_squared.append(np.sum(chi_sq))
-        print(All_Chi_squared)
-
         return evol
 
     #def plot_evolution

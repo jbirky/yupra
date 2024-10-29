@@ -78,7 +78,7 @@ max_RXsat = prior_data[6][0] + sigma_factor * prior_data[6][1]
 
 bounds = [(min_mass, max_mass),         # mass [Msun]        
           (0.1, 12.0),                  # Prot initial [days]
-          (0.1, 12.0),                  # age [Gyr]
+          (1, 3),                  # age [Gyr]
           (min_beta1, max_beta1),       # beta1
           (min_beta2, max_beta2),       # beta2
           (min_Rsat, max_Rsat),         # Rsat
@@ -149,23 +149,23 @@ labels = [r"$m_{\star}$ [M$_{\odot}$]",
 if __name__ == "__main__":
 
     # Initialize the surrogate model
-    sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
-                        savedir=save_dir, cache=True,
-                        labels=labels, scale=None)
+    # sm = SurrogateModel(fn=lnpost, bounds=bounds, prior_sampler=ps, 
+    #                     savedir=save_dir, cache=True,
+    #                     labels=labels, scale=None)
 
-    # Compute an initial training sample and train the GP
-    sm.init_samples(ntrain=200, ntest=100, reload=False)
-    sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
+    # # Compute an initial training sample and train the GP
+    # sm.init_samples(ntrain=200, ntest=100, reload=False)
+    # sm.init_gp(kernel=kernel, fit_amp=False, fit_mean=True, white_noise=-15)
 
-    # Train the GP using the active learning algorithm
-    sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
-    sm.plot(plots=["gp_all"])
+    # # Train the GP using the active learning algorithm
+    # sm.active_train(niter=1000, algorithm="bape", gp_opt_freq=10)
+    # sm.plot(plots=["gp_all"])
 
     # Reload the saved model and run MCMC
     sm = alabi.cache_utils.load_model_cache(save_dir)
     sm.savedir = save_dir
 
-    # MCMC with emcee change to 
+    # MCMC with emcee change to 5e5
     sm.run_emcee(lnprior=lnprior, nwalkers=50, nsteps=int(1e5), opt_init=False)
     sm.plot(plots=["emcee_corner"])
 

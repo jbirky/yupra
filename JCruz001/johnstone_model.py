@@ -100,12 +100,12 @@ class StellarEvolutionModel:
         return self.flux_to_luminosity(FEUV, radius)
 
     # def LXUV_model
-    def LXUV_model(self, theta):
+    def LXUV_model(self, theta, remove=True):
 
         mstar, prot, age, beta1, beta2, Rosat, RXsat = theta
 
         # Run the vplanet model with the input parameters
-        evol = self.vpm.run_model(np.array([mstar, prot, age]), remove=True)
+        evol = self.vpm.run_model(np.array([mstar, prot, age]), remove=remove)
 
         # adjust by scale factor to be consistent with Johnstone model 
         evol["final.star.RossbyNumberScaled"] = evol["final.star.RossbyNumber"] * .95/2.11
@@ -197,58 +197,22 @@ class StellarEvolutionModel:
         return evols
     
     def plot_evolution(self, evols, show=True):
-
-        fig, axs = plt.subplots(3, 1, figsize=[10,14], sharex=True)
-
+        fig, axs = plt.subplots(1, 1, figsize=[10,6], sharex=True)
         for evol in evols:
-            lbol = evol["final.star.Luminosity"].to(self.Lbol_unit)
-            lxuv = evol["final.star.LXUV"].to(self.Lxuv_unit)
-            prot = evol["final.star.RotPer"].to(self.Prot_unit)
-
-            axs[0].plot(evol["Time"], lbol, color="k", alpha=0.5)
-            axs[1].plot(evol["Time"], lxuv, color="k", alpha=0.5)
-            axs[2].plot(evol["Time"], prot, color="k", alpha=0.5)
-
-        axs[0].set_title(self.star_name, fontsize=24)
-        axs[0].set_ylabel("Bolometric Luminosity [{}]".format(lbol.unit), fontsize=20)
-        axs[0].set_xscale('log')
-        axs[0].set_yscale('log')
-
-        axs[1].set_ylabel("XUV Luminosity [{}]".format(lxuv.unit), fontsize=20)
-        axs[1].set_xscale('log')
-        axs[1].set_yscale('log')
-
-        axs[2].set_ylabel("Rotation Period [{}]".format(prot.unit), fontsize=20)
-        axs[2].set_xlabel("Time [{}]".format(evol["Time"].unit), fontsize=20)
-        axs[2].set_xscale('log')
-        axs[2].set_yscale('log')
-
-        if self.Lbol_data is not None:
-            axs[0].axhline(self.Lbol_data[0], color="r", linestyle="--")
-            axs[0].axhspan(self.Lbol_data[0]-self.Lbol_data[1], self.Lbol_data[0]+self.Lbol_data[1], color="r", alpha=0.2)
-
-        if self.Lxuv_data is not None:
-            axs[1].axhline(self.Lxuv_data[0], color="r", linestyle="--")
-            axs[1].axhspan(self.Lxuv_data[0]-self.Lxuv_data[1], self.Lxuv_data[0]+self.Lxuv_data[1], color="r", alpha=0.2)
-
+            lxray = evol["final.star.LXRAY"].to(self.Lxray_unit)
+            axs.plot(evol["Time"], lxray, color="k", alpha=0.5)
+        axs.set_ylabel("Xray Luminosity [{}]".format(lxray.unit), fontsize=20)
+        axs.set_xlabel("Time [{}]".format(evol["Time"].unit), fontsize=20)
+        axs.set_xscale('log')
+        axs.set_yscale('log')
+        axs.set_title(self.star_name, fontsize=24)
         if self.Lxray_data is not None:
-            axs[1].axhline(self.Lxray_data[0], color="r", linestyle="--")
-            axs[1].axhspan(self.Lxray_data[0]-self.Lxray_data[1], self.Lxray_data[0]+self.Lxray_data[1], color="r", alpha=0.2)
-
-        if self.Prot_data is not None:
-            axs[2].axhline(self.Prot_data[0], color="r", linestyle="--")
-            axs[2].axhspan(self.Prot_data[0]-self.Prot_data[1], self.Prot_data[0]+self.Prot_data[1], color="r", alpha=0.2)
-
-        if self.age_data is not None:
-            for ii in range(len(axs)):
-                axs[ii].axvline(self.age_data[0], color="r", linestyle="--")
-                axs[ii].axvspan(self.age_data[0]+self.age_data[1], self.age_data[0]+self.age_data[2], color="r", alpha=0.2)
-
-        axs[0].set_xlim(min(evol["Time"][1:].value), max(evol["Time"][1:].value))
+            axs.axhline(self.Lxray_data[0], color="r", linestyle="--")
+            axs.axhspan(self.Lxray_data[0]-self.Lxray_data[1], self.Lxray_data[0]+self.Lxray_data[1], color="r", alpha=0.2)
+        axs.set_xlim(min(evol["Time"][1:].value), max(evol["Time"][1:].value))
         plt.tight_layout()
         if show == True:
             plt.show()
-        
         return fig
 
 

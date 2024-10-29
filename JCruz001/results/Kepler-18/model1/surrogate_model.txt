@@ -10,7 +10,7 @@ fit mean: True
 fit amplitude: False 
 fit white_noise: False 
 GP white noise: -15 
-Hyperparameter bounds: [[-54715.58186375057, 52975.38761270426], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20]] 
+Hyperparameter bounds: [[-68694.54316575281, 66723.32133112024], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20], [-20, 20]] 
 Active learning algorithm : bape 
 
 Number of total training samples: 1200 
@@ -21,16 +21,69 @@ Number of test samples: 100
 Results: 
 -------- 
 GP final hyperparameters: 
-   [mean:value] 	-3443.544225182111 
-   [kernel:metric:log_M_0_0] 	-4.095400580975033 
-   [kernel:metric:log_M_1_1] 	2.3870858442364615 
-   [kernel:metric:log_M_2_2] 	-3.8394479584701267 
-   [kernel:metric:log_M_3_3] 	-4.67031937421677 
-   [kernel:metric:log_M_4_4] 	1.4156993873307708 
-   [kernel:metric:log_M_5_5] 	-7.398674458305739 
-   [kernel:metric:log_M_6_6] 	-16.688797838240564 
+   [mean:value] 	-4449.655050790722 
+   [kernel:metric:log_M_0_0] 	-5.021975542205414 
+   [kernel:metric:log_M_1_1] 	3.3477154769743467 
+   [kernel:metric:log_M_2_2] 	-4.6523017919421426 
+   [kernel:metric:log_M_3_3] 	-2.9076592207142125 
+   [kernel:metric:log_M_4_4] 	2.53442990533794 
+   [kernel:metric:log_M_5_5] 	-6.38043708260263 
+   [kernel:metric:log_M_6_6] 	-14.875564557662212 
 
-Active learning train runtime (s): 14351.0 
+Active learning train runtime (s): 15037.0 
 
-Final test error: 357019.7228044638 
+Final test error: 5907417.43028579 
+
+==================================================================
+emcee summary 
+==================================================================
+
+Configuration: 
+-------------- 
+Prior: User defined prior.Prior function: unrecorded 
+
+Number of walkers: 50 
+Number of steps per walker: 100000 
+
+Results: 
+-------- 
+Mean acceptance fraction: 0.043 
+Mean autocorrelation time: nan steps 
+Burn: 2 
+Thin: 1 
+Total burned, thinned, flattened samples: 4999900 
+
+emcee runtime (s): 1023.0 
+
+Summary statistics: 
+$m_{\star}$ [M$_{\odot}$] = 0.4924164852022968 +/- 0.12180270307825036 
+$P_{\rm rot,i}$ [days] = 6.910808065140004 +/- 2.972266054631211 
+$t_{\rm age}$ [Gyr] = 5.243575762481617 +/- 3.6781718221394235 
+$\beta_1$ = -0.1378012471763168 +/- 0.07548865128209095 
+$\beta_2$ = -1.9171507721941579 +/- 0.18468500832123144 
+$R_{\rm sat}$ = 0.06076829847724794 +/- 0.007249894294890772 
+$R_{X,\rm sat}$ = 0.0004998043043785174 +/- 7.467752033826301e-05 
+
+==================================================================
+dynesty summary 
+==================================================================
+
+Configuration: 
+-------------- 
+Prior: User defined prior transform.Prior function: unrecorded 
+
+Results: 
+-------- 
+Total weighted samples: 20463 
+
+Dynesty runtime (s): 672.0 
+
+Summary statistics: 
+$m_{\star}$ [M$_{\odot}$] = 0.4589794788173134 +/- 0.0018403153198319419 
+$P_{\rm rot,i}$ [days] = 5.30459728564082 +/- 0.16351123899108433 
+$t_{\rm age}$ [Gyr] = 2.460513760684762 +/- 0.0034540790022283435 
+$\beta_1$ = -0.19893242590661842 +/- 0.0038015896821572263 
+$\beta_2$ = -1.8321880317915238 +/- 0.04250856630583726 
+$R_{\rm sat}$ = 0.06098468538416141 +/- 0.0005912546585595189 
+$R_{X,\rm sat}$ = 0.0004680874080538697 +/- 8.094903999214311e-06 
 

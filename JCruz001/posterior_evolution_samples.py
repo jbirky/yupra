@@ -1,7 +1,7 @@
 import numpy as np
 import corner 
 from scipy.stats import norm
-from run_alabi import model1, model2, model3, bounds, labels, prior_data
+from run_alabi import model1, model2, bounds, labels, prior_data
 
 
 # ========================================================
