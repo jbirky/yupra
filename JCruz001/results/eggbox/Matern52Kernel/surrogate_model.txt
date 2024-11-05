@@ -1,0 +1,52 @@
+==================================================================
+GP summary 
+==================================================================
+
+Configuration: 
+-------------- 
+Kernel: Matern52Kernel 
+Function bounds: [(0, 1), (0, 1)] 
+fit mean: True 
+fit amplitude: True 
+fit white_noise: False 
+GP white noise: None 
+Hyperparameter bounds: [[-173.7694525498703, 350.65949897552423], [-20, 20], [-20, 20], [-20, 20]] 
+Active learning algorithm : bape 
+
+Number of total training samples: 400 
+Number of initial training samples: 200 
+Number of active training samples: 200 
+Number of test samples: 200 
+
+Results: 
+-------- 
+GP final hyperparameters: 
+   [mean:value] 	43.46704411599107 
+   [kernel:k1:log_constant] 	8.412457352805031 
+   [kernel:k2:metric:log_M_0_0] 	-4.148288629641899 
+   [kernel:k2:metric:log_M_1_1] 	-4.158152556900243 
+
+Active learning train runtime (s): 205.0 
+
+Final test error: 3.298785984253992 
+
+==================================================================
+dynesty summary 
+==================================================================
+
+Configuration: 
+-------------- 
+Prior: Default uniform prior transform. 
+Prior function: ut.prior_transform_uniform
+	with bounds [(0, 1), (0, 1)] 
+
+Results: 
+-------- 
+Total weighted samples: 15194 
+
+Dynesty runtime (s): 149.0 
+
+Summary statistics: 
+$\theta_0$ = 0.5093473810584062 +/- 0.2939742653063697 
+$\theta_1$ = 0.49615312807780526 +/- 0.2875155617098792 
+
